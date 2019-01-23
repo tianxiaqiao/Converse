@@ -62,7 +62,7 @@ header{
 }
 
 /* 购物车样式 */
-.shoppingCart{
+.left-headerbox{
     /* width: 80px; */
     padding-left: 36px;
     height: 100%;
@@ -72,7 +72,7 @@ header{
     align-items: center;
     line-height: 80px;
 }
-.shoppingCart a{
+.left-headerbox a{
     display: block;
     width: 50px;
     height: 100%;
@@ -81,7 +81,7 @@ header{
     color: #fff;
     text-decoration: none;
 } 
-.shoppingCart span{
+.left-headerbox span{
     display: block;
     width: 30px;
     height: 30px;
@@ -93,12 +93,12 @@ header{
     color:#fff;
     font-size: 18px;
 }
-.shoppingCart a:hover{
+.left-headerbox a:hover{
     text-decoration: underline;
 }
 
 /* 首行登录注册样式 */
-.loginAndRegistration{
+.login-headerbox{
     width: 116px;
     /* padding-left: 36px; */
     height: 100%;
@@ -108,8 +108,9 @@ header{
     /* align-items: center; */
     line-height: 80px;
     position: relative;
+    cursor:pointer;
 }
-.loginAndRegistration a{
+.login-headerbox a{
     display: block;
     /* width: 50px; */
     height: 100%;
@@ -118,7 +119,7 @@ header{
     color: #fff;
     text-decoration: none;
 } 
-.loginAndRegistration span{
+.login-headerbox span{
     display: block;
     width: 30px;
     height: 30px;
@@ -132,10 +133,10 @@ header{
     top: 50%;
     margin: -15px 0 0 86px;
 }
-.loginAndRegistration a:nth-child(2){
+.login-headerbox a:nth-child(2){
     margin: 0 6px;
 }
-.loginAndRegistration:hover span{
+.login-headerbox:hover span{
     background: #b7b7b7;
 }
 .login:hover{
@@ -145,9 +146,17 @@ header{
     text-decoration: underline;
 }
 
-
-
-
+/* 箭头 */
+.arrow{
+    position: absolute;
+    right: 167px;
+    /* right: 443px; */
+    top: 80px;
+    border-top:12px solid  rgba(000,000,000,1); 
+    border-left:12px solid  rgba(000,000,000,0);
+    border-bottom:12px solid  rgba(000,000,000,0);
+    border-right:12px solid  rgba(000,000,000,0);
+}
 /* 搜索栏样式 */
 .search{
     width: 100%;
@@ -155,21 +164,13 @@ header{
     position: relative;
     display: none;
 }
-.search , .active{
+/* .active{
+    width: 100%;
+    height: 80px;
+    position: relative;
     display: block;
-}
-
-/* 箭头 */
-.arrow{
-    position: absolute;
-    right: 160px;
-    top: 0;
-    border-top:12px solid  rgba(000,000,000,1); 
-    border-left:12px solid  rgba(000,000,000,0);
-    border-bottom:12px solid  rgba(000,000,000,0);
-    border-right:12px solid  rgba(000,000,000,0);
-}
-
+    transform: 2s;
+} */
 .search-content{
     width: 1000px;
     height: 80px;
@@ -230,7 +231,11 @@ header{
     top: 50%;
     margin-top: -15px;
 }
-
+.header-expanded{
+    width: 100%;
+    height: 397px;
+    display: none;
+}
 
 
 
