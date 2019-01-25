@@ -4,10 +4,16 @@ $(".magnifier").on("click",function(){
     $(".arrow").css({
         right : 167
     })
-    $(".header-expanded").hide(1000);  
-    $(".search").toggle(2000);
-     
+    $(".header-expanded").slideUp("show");  
+    $(".search").slideToggle("show");
+        
 })
+
+// 搜索栏关闭按钮
+$(".search-close").on("click",function(){
+    $(".search").slideUp("show");
+})
+// 搜索框里内容
 $(".import").on("focus",function(){
     $(this).val("");
 })
@@ -23,6 +29,19 @@ $("#login").on("click",function(){
     $(".arrow").css({
         right : 443
     })
-    $(".search").hide("1000");
-    $(".header-expanded").toggle(2000);
+    $(".search").slideUp("show");
+    $(".header-expanded").slideToggle("show");
+})
+// 点击登录发生的事件
+$(".login").on("click",function(){
+    $(".registerbox"). fadeOut("show");
+    $(".header-expanded").show("show");
+    $(".loginbox"). fadeIn("show");
+    
+})
+// 点击注册发生的事件
+$(".registration").on("click",function(){
+    $(".loginbox"). fadeOut("show");
+    $(".header-expanded").show("show");
+    $(".registerbox"). fadeIn("show");
 })
