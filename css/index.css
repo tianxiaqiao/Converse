@@ -18,7 +18,9 @@ header{
     padding: 0 84px 0 68px;  
     position: relative;
 }
-
+li{
+    list-style: none;
+}
 /* logo样式 */
 .logo img{
     width: 163px;
@@ -231,14 +233,150 @@ header{
     margin-left:-500px;
 }
 .loginbox{
-    display: block;
+    /* display: block; */
     background: #940000;
     /* z-index: 1; */
 }
+
+/* 注册页面样式 */
 .registerbox{
-    display: none;
-    background: yellow;
+    /* display: none; */
+    display: block;
+    position: relative;
+    /* background: yellow; */
 }
+.registerbox ul{
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+}
+.registerbox ul li{
+    width: 30%;
+    height: 95px;
+    margin: 0 5% 1% 0;
+    font-size: 13px;
+    line-height: 20px;
+}
+.account,.sex{
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+.registerbox ul li b{
+    color: red;
+}
+.registerbox input{
+    border: 1px solid #999;
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    padding: 5px 5px 5px 18px;
+    box-sizing: border-box;
+}
+.registerbox ul li:nth-child(3){
+    margin-right: 0;
+}
+.sex{
+    display: flex;
+    line-height: 40px;
+}
+.sex div{
+    width: 50%;
+    display: flex;
+}
+.sex input{
+    width: 20px;
+    height: 20px;
+    margin: 10px 10px 0 0;
+}
+.registerbox_bottom ul li:nth-child(3){
+    font-size: 11px;
+}
+.registerbox_center select{
+    width: 30%;
+    height: 40px;
+}
+.registerbox_center select:nth-child(2){
+    margin: 0 20px 0 20px;
+}
+.birthday{
+    display: flex;
+    margin-top: 10px;
+}
+.blueDot{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #3873ff;
+    border-radius: 12px;
+    margin: 0 20px;
+}
+.validation{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    background: #f4f4f4;
+    cursor:pointer;
+    color: #666;
+    line-height: 42px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+}
+.shortMessage{
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    margin-top:10px;
+}
+.shortMessage input{
+    width: 50%;
+}
+.shortMessage h5{
+    /* display: inline-block; */
+    width: 45%;
+    height: 40px;
+    background: #848484;
+    color: #f2f2f2;
+    text-align: center;
+    font-size: 13px;
+    font-weight: normal;
+    cursor:pointer;
+}
+.registeredAccount{
+    width: 100%;
+    height: 40px;
+    background: #000000;
+    margin-top: 10px;
+    color: #f9f9f9;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    cursor:pointer;
+    box-sizing: border-box;
+    border: none;
+}
+.registeredAccount:hover{
+    line-height: 38px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #000000;
+    border:2px solid #999999;
+}
+.inputError{
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    /* display: block; */
+    display:none;
+}
+.blankError{
+    /* display: block; */
+    display:none;
+    color: red;
+    font-size: 12px;
+}
+
+
 
 
 /* 导航 */

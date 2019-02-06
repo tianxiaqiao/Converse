@@ -21,9 +21,6 @@ $(".import").on("blur",function(){
     $(this).val()!="" || $(this).val("想找什么随便搜"); 
 })
 
-
-
-
 // 点击登录头像事件
 $("#login").on("click",function(){
     $(".arrow").css({
@@ -37,6 +34,7 @@ $(".login").on("click",function(){
     $(".registerbox"). fadeOut("show");
     $(".header-expanded").show("show");
     $(".loginbox"). fadeIn("show");
+    $(".search").slideUp("show");
     
 })
 // 点击注册发生的事件
@@ -44,4 +42,7 @@ $(".registration").on("click",function(){
     $(".loginbox"). fadeOut("show");
     $(".header-expanded").show("show");
     $(".registerbox"). fadeIn("show");
+    $(".search").slideUp("show");
 })
+
+// 注册页面表单验证

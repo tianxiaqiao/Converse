@@ -82,10 +82,105 @@
         <div class="header-expanded">
             <div class="loginbox">
             </div> 
+
+            <!-- 注册页面 -->
             <div class="registerbox">
-                <div class="registerbox_top"></div>
-                <div class="registerbox_center"></div>
-                <div class="registerbox_bottom"></div>
+                <div class="registerbox_top">
+                    <ul>
+                        <li>
+                            手机号码
+                            <b>*</b>
+                            <div class="account">
+                                <input type="text" placeholder="135xxxx3333">
+                            </div>
+                            <span class="inputError">请输入11位有效中国手机号码！</span>
+                            <span class="blankError">请输入手机号码！</span>
+                        </li>
+                        <li>
+                            邮箱
+                            <b>*</b>
+                            <div class="account">
+                                <input type="text" placeholder="example@converse.com">
+                            </div>
+                            <span class="inputError">请输入有效的电子邮箱地址！</span>
+                            <span class="blankError">请输入电子邮箱地址！</span>
+                        </li>
+                        <li>
+                            性别
+                            <b>*</b>
+                            <div class="sex">
+                                <div class="man">
+                                    <input name="sex" type="radio" checked="checked"/>男的
+                                </div>
+                                <div class="woman">
+                                    <input name="sex" type="radio" />女的
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="registerbox_center">
+                    <ul>
+                        <li>
+                            输入密码
+                            <b>*</b>
+                            <div class="account">
+                                <input type="password" placeholder="密码至少为6位字符">
+                            </div>
+                            <span class="inputError">密码为6-12位字符！</span>
+                            <span class="blankError">请输入密码</span>
+                        </li>
+                        <li>
+                            确认密码
+                            <b>*</b>
+                            <div class="account">
+                                <input type="password" placeholder="请再次输入密码">
+                            </div>
+                            <span class="inputError">密码为6-12位字符！</span>
+                            <span class="blankError">请再次输入密码</span>
+                        </li>
+                        <li>
+                            生日（年-月-日）
+                            <b>*</b>
+                            <div class="birthday">
+                                <select name="years" id="years">
+                                    <option value="2019">2019</option>
+                                </select>
+                                <select name="months" id="months">
+                                    <option value="1">1</option>
+                                </select>
+                                <select name="days" id="days">
+                                    <option value="1">1</option>
+                                </select>  
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="registerbox_bottom">
+                    <ul>
+                        <li>
+                            <div class="validation">
+                                <span class="blueDot"></span>
+                                <span>点击按钮进行验证</sapn>
+                            </div>
+                        </li>
+                        <li>
+                            短信验证码
+                            <b>*</b>
+                            <div class="shortMessage">
+                                <input type="text">
+                                <h5>发送短信验证码</h5>
+                            </div>
+                            <span class="inputError">您填写的短信验证码有误，请重新输入！</span>
+                        </li>
+                        <li>
+                            一旦创建账户，即表明你同意匡威的<a href="#">法律声明</a>和<a href="#">使用规则</a>
+                            <button class="registeredAccount">
+                                注册账户>
+                            </button>
+                        </li>
+                    </ul>                    
+                </div>
             </div> 
         </div>
         <!-- 导航 -->
