@@ -84,26 +84,26 @@
             </div> 
 
             <!-- 注册页面 -->
-            <div class="registerbox">
+            <form class="registerbox" action="./mysql.php" method="GET">
                 <div class="registerbox_top">
                     <ul>
                         <li>
                             手机号码
                             <b>*</b>
                             <div class="account">
-                                <input type="text" placeholder="135xxxx3333">
+                                <input type="text" id="phone" name="phone" placeholder="135xxxx3333">
                             </div>
-                            <span class="inputError">请输入11位有效中国手机号码！</span>
-                            <span class="blankError">请输入手机号码！</span>
+                            <span class="phone_inputError">请输入11位有效中国手机号码！</span>
+                            <span class="phone_blankError">请输入手机号码！</span>
                         </li>
                         <li>
                             邮箱
                             <b>*</b>
                             <div class="account">
-                                <input type="text" placeholder="example@converse.com">
+                                <input type="text" id="email" name="email" placeholder="example@converse.com">
                             </div>
-                            <span class="inputError">请输入有效的电子邮箱地址！</span>
-                            <span class="blankError">请输入电子邮箱地址！</span>
+                            <span class="mail_inputError">请输入有效的电子邮箱地址！</span>
+                            <span class="mail_blankError">请输入电子邮箱地址！</span>
                         </li>
                         <li>
                             性别
@@ -125,32 +125,32 @@
                             输入密码
                             <b>*</b>
                             <div class="account">
-                                <input type="password" placeholder="密码至少为6位字符">
+                                <input type="password" id="password" name="password" placeholder="密码至少为6位字符">
                             </div>
-                            <span class="inputError">密码为6-12位字符！</span>
-                            <span class="blankError">请输入密码</span>
+                            <span class="pas_inputError">密码为6-12位字符！</span>
+                            <span class="pas_blankError">请输入密码</span>
                         </li>
                         <li>
                             确认密码
                             <b>*</b>
                             <div class="account">
-                                <input type="password" placeholder="请再次输入密码">
+                                <input type="password" id="confirmPassword" placeholder="请再次输入密码">
                             </div>
-                            <span class="inputError">密码为6-12位字符！</span>
-                            <span class="blankError">请再次输入密码</span>
+                            <span class="confirmPas_inputError">抱歉，两次输入的密码不匹配！</span>
+                            <span class="confirmPas_blankError">请再次输入密码</span>
                         </li>
                         <li>
                             生日（年-月-日）
                             <b>*</b>
                             <div class="birthday">
                                 <select name="years" id="years">
-                                    <option value="2019">2019</option>
+                                    <!-- <option value="2019">2019</option> -->
                                 </select>
                                 <select name="months" id="months">
-                                    <option value="1">1</option>
+                                    <!-- <option value="1">1</option> -->
                                 </select>
                                 <select name="days" id="days">
-                                    <option value="1">1</option>
+                                    <!-- <option value="1">1</option> -->
                                 </select>  
                             </div>
                         </li>
@@ -160,28 +160,29 @@
                     <ul>
                         <li>
                             <div class="validation">
-                                <span class="blueDot"></span>
-                                <span>点击按钮进行验证</sapn>
+                                <p class="blueDot"></p>
+                                <p>点击按钮进行验证</p>
                             </div>
                         </li>
                         <li>
                             短信验证码
                             <b>*</b>
                             <div class="shortMessage">
-                                <input type="text">
-                                <h5>发送短信验证码</h5>
+                                <input type="text" id="inCode">
+                                <h5 class="sendText">发送短信验证码</h5>
                             </div>
-                            <span class="inputError">您填写的短信验证码有误，请重新输入！</span>
+                            <span class="shortMes_inputError">您填写的短信验证码有误，请重新输入！</span>
                         </li>
                         <li>
                             一旦创建账户，即表明你同意匡威的<a href="#">法律声明</a>和<a href="#">使用规则</a>
-                            <button class="registeredAccount">
+                            <input type="submit" class="registeredAccount">
+                            <button type="submit" class="registeredAccount">
                                 注册账户>
                             </button>
                         </li>
                     </ul>                    
                 </div>
-            </div> 
+            </form> 
         </div>
         <!-- 导航 -->
         <div class="navigation">
