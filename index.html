@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/headerAndFooter.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./font_eckroinw33/iconfont.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.css">
     <title>0</title>
-    <style>
-        
-    </style>
 </head>
 <body>
-   
-    
     <header>
         <div class="header-content">
-
             <!-- 首行logo -->
             <div class="logo">
                 <a href="#">
@@ -64,12 +60,16 @@
         
 
         <!-- 箭头 -->
-        <div class="arrow"></div>
+        <!-- <div class="arrow"></div> -->
         <!-- 右侧点击搜索按钮弹出的搜索框 -->
         <div class="search">
+            <div class="arrow"></div>
             <div class="search-content">
                 <div class="search-value">
                     <input type="text" class="import" value="想找什么随便搜">
+                    <ul id="list">
+
+                    </ul>
                 </div>
                 <div class="search-button">
                     <span class="iconfont">&#xe62a;</span>
@@ -80,7 +80,62 @@
 
         <!-- 登录注册下拉页面 -->
         <div class="header-expanded">
+            <div class="arrow"></div>
             <div class="loginbox">
+                <div class="loginbox_left">
+                    <ul>
+                        <li>还未注册？</li>
+                        <li>
+                            <div class="loginAccount" id="loginAccount">
+                                    注册账户>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loginbox_center">
+                    <h5>您可以直接登录</h5>
+                    <ul class="externalLogin">
+                        <li><img src="./img/login01.jpg" alt=""></li>
+                        <li><img src="./img/login02.jpg" alt=""></li>
+                        <li><img src="./img/login03.jpg" alt=""></li>
+                        <li><img src="./img/login04.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <div class="loginbox_right">
+                    <ul>
+                        <li>已经成为会员？</li>
+                        <li>
+                            <div>
+                                <input type="text" placeholder="邮箱/手机" id="loginID">
+                            </div>
+                            <span class="accountError">请输入有效的电子邮箱/手机号码！</span>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="password" placeholder="账户密码" id="loginPas">
+                            </div>
+                            <span class="pasError">密码必须在6-12个字符之间！</span>
+                        </li>
+                        <li>
+                            <div class="validation">
+                                <p class="blueDot"></p>
+                                <p>点击按钮进行验证</p>
+                            </div>
+                        </li>
+                        <li>
+                            一旦登录，即表明你同意匡威的<a href="#">法律声明</a>和<a href="#">使用规则</a>
+                            <button type="submit" class="loginAccount">
+                                    登录>
+                            </button>
+                        </li>
+                        <li>
+                            <div class="remember">
+                                <input type="checkbox" class="remember_pas">记住登录名
+                            </div>
+                            <a href="#">忘记密码？</a>
+                        </li>
+                    </ul>
+                </div>
             </div> 
 
             <!-- 注册页面 -->
@@ -119,7 +174,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="registerbox_center">
+                <div class="registerbox_middle">
                     <ul>
                         <li>
                             输入密码
@@ -175,7 +230,7 @@
                         </li>
                         <li>
                             一旦创建账户，即表明你同意匡威的<a href="#">法律声明</a>和<a href="#">使用规则</a>
-                            <input type="submit" class="registeredAccount">
+                            <!-- <input type="submit" class="registeredAccount"> -->
                             <button type="submit" class="registeredAccount">
                                 注册账户>
                             </button>
@@ -186,12 +241,285 @@
         </div>
         <!-- 导航 -->
         <div class="navigation">
-
+            <ul class="list">
+                <li  id="man_nav">
+                    <a href="#">男的</a>
+                    <span></span>
+                    <!-- 二级导航01 -->
+                    <div class="man_nav">
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide01.jpg" alt="">
+                                    <i>踩的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide02.jpg" alt="">
+                                    <i>穿的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide03.jpg" alt="">
+                                    <i>T恤</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide04.jpg" alt="">
+                                    <i>戴的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide05.jpg" alt="">
+                                    <i>新产品</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide06.jpg" alt="">
+                                    <i>优惠</i> 
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide07.jpg" alt="">
+                                    <i>经典款</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide08.jpg" alt="">
+                                    <i>CHUCK 70</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide09.jpg" alt="">
+                                    <i>ONE STAR</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide10.jpg" alt="">
+                                    <i>ALL STAR</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide11.jpg" alt="">
+                                    <i>CONS</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide12.jpg" alt="">
+                                    <i>JACK PURCELL</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide13.jpg" alt="">
+                                    <i>CHUCK JI</i> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="woman_nav">
+                    <a href="#">女的</a>
+                    <span></span>
+                    <!-- 二级导航02 -->
+                    <div class="woman_nav">
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide13.jpg" alt="">
+                                    <i>踩的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/chuande01.jpg" alt="">
+                                    <i>穿的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/chuande02.jpg" alt="">
+                                    <i>T恤</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/chuande03.jpg" alt="">
+                                    <i>戴的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide05.jpg" alt="">
+                                    <i>新产品</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide06.jpg" alt="">
+                                    <i>优惠</i> 
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide07.jpg" alt="">
+                                    <i>经典款</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide08.jpg" alt="">
+                                    <i>CHUCK 70</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide09.jpg" alt="">
+                                    <i>ONE STAR</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide10.jpg" alt="">
+                                    <i>ALL STAR</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide11.jpg" alt="">
+                                    <i>CONS</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide12.jpg" alt="">
+                                    <i>JACK PURCELL</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/caide13.jpg" alt="">
+                                    <i>CHUCK JI</i> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>  
+                </li>
+                <li id="child_nav">
+                    <a href="#">儿童</a>
+                    <span></span> 
+                     <!-- 二级导航03 -->
+                    <div class="child_nav">
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="./img/xiaohai01.jpg" alt="">
+                                    <i>(1-4岁)</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/xiaohai02.jpg" alt="">
+                                    <i>(4-8岁)</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/xiaohai03.jpg" alt="">
+                                    <i>(4-12岁)</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="./img/xiaohai04.jpg" alt="">
+                                    <i>(8-12岁)</i> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>   
+                </li>
+                <li>
+                    <a href="#">型人搭配</a>
+                    <span></span>
+                </li>
+                <li>
+                    <a href="#">联名合作款</a>
+                    <span></span>
+                </li>
+                <li>
+                    <a href="#">店铺分布</a>
+                    <span></span>
+                </li>
+            </ul>
         </div>
     </header>
-    <section></section>
+    <!-- 聊天悬浮窗 -->
+    <div id="floating">
+        <img src="./img/floating.png" alt="">
+    </div>
+    <section>
+        <div class="annunciate">
+                尊敬的顾客您好，我们店铺是不会泄露您的消费信息的，请放心。另外我们也不会要求获取、收集、使用任何与消费者金融消费类（如：信用卡）信息，如果接到以上信息电话，是属于诈骗电话，请勿相信，以防钱财损失。如您对订单有疑问，请联系在线客服。
+        </div>
+        <div class="banner-container">
+            <div class="banner-button">
+                <button id="left"><</button>
+                <button id="right">></button>
+            </div>
+            <div class="banner-wrap">
+                <div class="banner-slide active-show">
+                    <img src="./img/banner01.jpg" alt="">
+                </div>
+                <div class="banner-slide active-hide">
+                    <img src="./img/banner02.png" alt="">
+                </div>
+                <div class="banner-slide">
+                    <img src="./img/banner03.jpg" alt="">
+                </div>
+                <div class="banner-slide">
+                    <img src="./img/banner04.jpg" alt="">
+                </div>
+                <div class="banner-slide">
+                    <img src="./img/banner05.jpg" alt="">
+                </div>
+            </div>
+            <div class="banner-pagination">
+                <span class="active">JWA</span>
+                <span>ERX</span>
+                <span>用爱发声</span>
+                <span>One Star</span>
+                <span>My Game</span>
+            </div>
+        </div>
+        <div class="classify">
+            <div class="classify-top">
+                <h1>热卖单品</h1>
+                <hr>
+            </div>
+            <div class="haha"></div>
+        </div>
+    </section>
     <footer></footer>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="./js/headerAndFooter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>

@@ -1,212 +1,80 @@
+// 轮播图
+var left = document.getElementById("left");
+var right = document.getElementById("right");
+var wrap = document.querySelector(".banner-wrap");
+var banner_timer = null;
+var spans = document.querySelector(".banner-pagination").children;
+var container = document.querySelector(".banner-container");
+var sliders = wrap.children;
+// console.log(sliders);
+var nowIndex = 0;
+var oldIndex = 0;
 
-// 点击首行搜索图标事件
-$(".magnifier").on("click",function(){
-    $(".arrow").css({
-        right : 167
-    })
-    $(".header-expanded").slideUp("show");  
-    $(".search").slideToggle("show");
-        
-})
+left.addEventListener("click",reduceIndex);
+left.addEventListener("click",bannerAnimate);
+function reduceIndex(){
+oldIndex = nowIndex;
+if(nowIndex === 0){
+nowIndex = sliders.length-1;
+}else{
+nowIndex --;
+}
+}
+right.addEventListener("click",addIndex);
+right.addEventListener("click",bannerAnimate);
+function addIndex(){
+oldIndex = nowIndex;
+if(nowIndex === sliders.length-1){
+nowIndex = 0;
+}else{
+nowIndex ++;
+}
+}
+function bannerAnimate(){
+if(oldIndex === nowIndex)return false;
+// console.log(nowIndex);
+// console.log(oldIndex);
+sliders = Array.from(sliders);
 
-// 搜索栏关闭按钮
-$(".search-close").on("click",function(){
-    $(".search").slideUp("show");
+sliders.forEach(function(item,index){
+item.className = item.className.replace(/(\s)?active-show|(\s)?active-hide/g,"");
+spans[index].className = "";
 })
-// 搜索框里内容
-$(".import").on("focus",function(){
-    $(this).val("");
-})
-$(".import").on("blur",function(){
-    $(this).val()!="" || $(this).val("想找什么随便搜"); 
-})
+sliders[nowIndex].className = sliders[nowIndex].className + " active-show";
+sliders[oldIndex].className = sliders[oldIndex].className + " active-hide";
+spans[nowIndex].className = "active";
+}
 
-// 点击登录头像事件
-$("#login").on("click",function(){
-    $(".arrow").css({
-        right : 443
-    })
-    $(".search").slideUp("show");
-    $(".header-expanded").slideToggle("show");
+spans = Array.from(spans);
+spans.forEach(function(item,index){
+item.addEventListener("mouseenter",toIndex.bind(false,index));
+item.addEventListener("mouseenter",bannerAnimate);
 })
-// 点击登录发生的事件
-$(".login").on("click",function(){
-    $(".registerbox"). fadeOut("show");
-    $(".header-expanded").show("show");
-    $(".loginbox"). fadeIn("show");
-    $(".search").slideUp("show");
-    
-})
-// 点击注册发生的事件
-$(".registration").on("click",function(){
-    $(".loginbox"). fadeOut("show");
-    $(".header-expanded").show("show");
-    $(".registerbox"). fadeIn("show");
-    $(".search").slideUp("show");
-})
+function toIndex(index){
+// console.log(index);
+oldIndex = nowIndex;
+nowIndex = index;
 
-// 注册页面表单验证
-// 1.手机号验证
-$("#phone").on("blur",function(){
-    var phone_reg = /^1[34578]\d{9}$/;
-    var phone_str = phone.value;
-    // console.log(phone_str);
+}
 
-    if(phone_reg.test(phone_str)){
-        $(".phone_inputError").css("display","none");
-        $(".phone_blankError").css("display","none");
-    }else   if(phone_str === ""){
-                $(".phone_blankError").css("display","block");
-                $(".phone_inputError").css("display","none");
-                // console.log(1);
-            }else{
-                // console.log(1);
-                $(".phone_blankError").css("display","none");
-                $(".phone_inputError").css("display","block");
-            }
-})
-// 2.邮箱验证
-$("#email").on("blur",function(){
-    var email_reg = /^\w{6,20}@[a-z0-9]{2,7}\.[a-z]{2,8}$/;
-    var email_str = email.value;
-    // console.log(phone_str);
 
-    if(email_reg.test(email_str)){
-        $(".mail_inputError").css("display","none");
-        $(".mail_blankError").css("display","none");
-    }else   if(email_str === ""){
-                $(".mail_blankError").css("display","block");
-                $(".mail_inputError").css("display","none");
-                // console.log(1);
-            }else{
-                // console.log(1);
-                $(".mail_blankError").css("display","none");
-                $(".mail_inputError").css("display","block");
-            }
-})
-// 3.密码验证
-$("#password").on("blur",function(){
-    var password_reg = /^.{6,20}$/;
-    var password_str = password.value;
-    // console.log(phone_str);
+container.addEventListener("mouseenter",sS.bind(false,"stop"));
+container.addEventListener("mouseleave",sS.bind(false,"start"));
+function sS(type,evt){
+var e = evt || event;
+if(type === "stop"){
+clearInterval(banner_timer);
+banner_timer = null;
+}else if(type === "start"){
+if(banner_timer !== null ) return false;
 
-    if(password_reg.test(password_str)){
-        $(".pas_inputError").css("display","none");
-        $(".pas_blankError").css("display","none");
-    }else   if(password_str === ""){
-                $(".pas_blankError").css("display","block");
-                $(".pas_inputError").css("display","none");
-                // console.log(1);
-            }else{
-                // console.log(1);
-                $(".pas_blankError").css("display","none");
-                $(".pas_inputError").css("display","block");
-            }
-})
-// 4.密码确认
-$("#confirmPassword").on("blur",function(){
-    // var confirmPassword_reg = /^.{6,20}$/;
-    var confirmPassword_str = confirmPassword.value;
-    var password_str = password.value;
+// 自动点击
+// banner_timer = setInterval(function(){
+//     var evt = new Event("click");
+//     right.dispatchEvent(evt);
+// },3000)
+}
+}
+sS("start");
 
-    if(confirmPassword_str === ""){
-        $(".confirmPas_blankError").css("display","block");
-        $(".confirmPas_inputError").css("display","none");
-    }else  if(confirmPassword_str === password_str){
-                $(".confirmPas_inputError").css("display","none");
-                $(".confirmPas_blankError").css("display","none");
-            }else{
-                $(".confirmPas_blankError").css("display","none");
-                $(".confirmPas_inputError").css("display","block");
-            }
-})
-// 5.生日
-$("document").ready(function(){
-    var date = new Date();
-    year = date.getFullYear();
-    // console.log(year);
-    var yearList = "";
-    var monthList = "";
-    var dayList = "";
-    var allDay = "";
-    for(var i = year ; i >= 1919; i --){
-        yearList += "<option value=" + i + ">" + i + "</option>";
-        // console.log(yearList);
-    }
-    $("#years").html(yearList);
 
-    for(var i = 1 ; i < 13; i ++){
-        monthList += "<option value=" + i + ">" + i + "</option>";
-        // console.log(yearList);
-    }
-    $("#months").html(monthList);
-
-    for(var i = 1 ; i <= 31 ; i ++){
-        dayList += "<option value=" + i + ">" + i + "</option>";
-        // console.log(yearList);
-    }
-    $("#days").html(dayList);
-
-    $("#months").change(function(){
-        $(dayList).empty();
-        var leapYear = $("#years").val();
-        var leapMonth = $("#months").val();
-        switch(leapMonth){
-            case "1" :
-            case "3" :
-            case "5" :
-            case "7" :
-            case "8" :
-            case "10" :
-            case "12" :allDay = 31;break;
-            case "4" :
-            case "6" :
-            case "9" :
-            case "11" :allDay = 30;break;
-            case "2" :
-                if((leapYear % 4 == 0 && leapYear % 100 != 0) || leapYear % 400 == 0){
-                    allDay = 29;
-                }else{
-                    allDay = 28;
-                }
-            default:break;
-        }
-        for(var i = 1 ; i <= allDay ; i ++){
-            dayList += "<option value=" + i + ">" + i + "</option>";
-            // console.log(yearList);
-        }
-        $("#days").html(dayList);
-    })
-})
-// 6.短信验证
-$("#inCode").on("blur",function(){
-    var code_reg = /^\d{4}$/;
-    var code_str = inCode.value;
-    // console.log(code_str);
-    if(code_reg.test(code_str)){
-        $(".shortMes_inputError").css("display","none");
-    }else{
-        $(".shortMes_inputError").css("display","block");
-    }
-})
-$(".sendText").on("click",function(){
-    $(".shortMes_inputError").css("display","none");
-    var code = Math.floor(Math.random()*9000)+1000;
-    // console.log(code);
-    $("#inCode").val(code);
-})
-// 7.注册提交事件
-var spans = $(".registerbox span");
-$(".registeredAccount").on("click",function(evt){
-    var e= evt || window.event;
-    // spans = Array.from(spans);
-    var inputs = $(".registerbox input").val();
-    // console.log(inputs);
-    var display =$(spans).css('display');
-    if(display == "none" && inputs != ""){
-        // $(".loginbox"). fadeIn("show");
-    }else{
-        return false;
-    }
-
-})
