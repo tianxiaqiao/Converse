@@ -352,12 +352,13 @@ $(".registeredAccount").on("click",function(evt){
 secondNav("#woman_nav",".woman_nav");
 secondNav("#man_nav",".man_nav");
 secondNav("#child_nav",".child_nav");
+// console.log($("#man_nav a"));
 function secondNav(idName,className){
     $(idName).on("mouseenter",function(){
         $(className).show(1000);
     });
     $(idName).on("mouseleave",function(){
-        $(className).hide(1000);
+        $(className).hide();
     });
 }
 
@@ -389,7 +390,6 @@ $(window).on("scroll",function(){
 })
 
 // 聊天悬浮窗
-
 var floating = document.getElementById("floating");
 var timer = null;
 var target = 0;

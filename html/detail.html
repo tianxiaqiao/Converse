@@ -8,6 +8,7 @@
     <!-- <link rel="stylesheet" href="../css/index.css"> -->
     <link rel="stylesheet" href="../font_eckroinw33/iconfont.css">
     <link rel="stylesheet" href="../css/detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.css">
     <title>3</title>
 </head>
 <body>
@@ -83,10 +84,133 @@
                 </div>
             </div>
             <!-- 右侧 -->
-            <div class="add-cart"></div>
+            <div class="add-cart">
+                <!-- 第一行 -->
+                <ul class="choose-color">
+                    <li class="choose-active">
+                        <img src="../img/右01.png" alt="">
+                    </li>
+                    <li>
+                        <img src="../img/右02.png" alt="">
+                    </li>
+                    <li>
+                        <img src="../img/右03.png" alt="">
+                    </li>
+                    <li>
+                        <img src="../img/右04.png" alt="">
+                    </li>
+                    <li>
+                        <img src="../img/右05.png" alt="">
+                    </li>
+                </ul>
+                <!-- 第二行尺码对照 -->
+                <div class="shoeSize-container">
+                    <div class="shoe-color">
+                        <p>色 : 黑</p>
+                        <p>型号 : 101001001</p>
+                    </div>
+                    <div class="shoe-size">
+                        <i>></i>
+                        <span><a href="#">尺码对照表</a></span>
+                    </div>
+                </div>
+                <!-- 第三行 -->
+                <div class="product-add-cart">
+                    <!-- 尺码对照 -->
+                    <div class="product-size-wrap">
+                        <p>尺码换算器</p>
+                        <p>本鞋款尺码通常偏大，建议可选小半码，或对照尺码表。</p>
+                    </div>
+                    <!-- 选择尺码 -->
+                    <div class="select-line">
+                            <div class="text-left">请输入您的尺码</div>
+                            <div class="text-right">
+                                <select class="size-select">
+                                    <option>请选择尺码</option>
+                                </select>
+                            </div>
+                    </div>
+                    <!-- 添加商品数量 -->
+                    <div class="chooseNum">
+                            <div class="text-left">数量</div>
+                            <div class="text-right">
+                                <input type="text" value="1">
+                                <div class="btnbox">
+                                    <span class="add">∧</span>
+                                    <span class="reduce">∨</span>
+                                </div>
+                            </div>                            
+                    </div>
+                    <p class="sizeError">请选择尺码</p>
+                    <!-- 立即购买按钮 -->
+                    <a href="#" class="now-buy-btn">
+                        <span>立即购买</span>
+                    </a>
+                    <!-- 加入购物车按钮 -->
+                    <a href="#" class="add-buycart-btn">
+                        <span>+添加到购物车</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 放大镜下面的文字 -->
+        <div class="product-description">
+            <h3>经典常青</h3>
+            <li>经久不衰的纯色经典常青款，鞋舌具有标志性的Chuck Tayor All Star鞋标</li>
+            <li>纯粹的帆布面料，低帮系带，保留着Converse的固有传统风格</li>
+            <li>橡胶底耐磨有弹性，鞋底的纹路又有起到防滑的作用</li>
+            <li>鞋底侧边条纹和清晰的装饰纹路，传承了经典</li>
+
+            <p>温馨提示</p>
+            <p>因商品的新旧更新，本商品在同一个货号情形下，新旧款商品会呈现有两种不同的Logo及其他细微差异，新旧款商品仓库会随机安排发货，如您介意，请您在购买商品前完整查看页面显示新旧款商品图片，谨慎购买。感谢您的关注和理解，祝您购物愉快。</p>
+            <p></p>
+            <!-- 价格说明 -->
+            <h3>价格说明（此说明仅当出现价格比较时有效）</h3>
+            <p>划线价格：划线的价格可能是商品的专柜吊牌价或正品零售价指导价或该商品的曾经展示过的销售价等，仅供您参考。</p>
+            <p>未划线价格：未划线的价格是商品在官网上的销售标价，具体的成交价格可能因为会员使用优惠券发生变化，最终以订单结算页价格为准。</p>
+            <a class="learn-more-btn" href="#">
+                Chuck Taylor All Star
+            </a>
+        </div>
+
+        <!-- 猜你喜欢 -->
+        <div class="recommend">
+            <div>
+                <h1>您或许会喜欢</h1>
+                <hr>
+            </div>
+            <!-- 猜你喜欢轮播图 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+        </div>
+
+        <!-- 评论 -->
+        <div class="evaluate">
+            <div class="evaluate-box">
+                <h1>379  评论</h1>
+                <hr>
+            </div>
+            <div class="c-c-top">
+                <div class="comment-stars">
+                    <span style="width: 171.5px;"></span>
+                </div>
+                <div class="c-s-level">4.9</div>
+            </div>
         </div>
     </section>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.js"></script>
     <script src="../js/detail.js"></script>
     <!-- <script src="../js/headerAndFooter.js"></script> -->
     <!-- <script src="../js/index.js"></script>     -->

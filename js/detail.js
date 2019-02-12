@@ -23,7 +23,7 @@ var big_wrap = document.querySelector(".magnifier-big");
 var small_wrap = document.querySelector(".magnifier-small");
 
 var big_bg = big_wrap.children[0];
-console.log(big_bg);
+// console.log(big_bg);
 var small_bg = small_wrap.children[0];
 
 var choice_wrap = document.querySelector(".magnifier-choice");
@@ -119,3 +119,43 @@ function choice(item){
         small_bg.src = smallSrc;
         big_bg.src = bigSrc;
 }
+
+// 选择尺码
+$("document").ready(function(){
+    var sizeList = "";
+    for(var i = 35 ; i < 45 ; i++){
+        // $(".size-select").html("<option>请选择尺码</option>");
+        sizeList = "<option value=" + i + ">" + i + "</option>";
+        $(".size-select").append(sizeList);
+    }
+})
+
+// 商品数量加减
+$(".add").on("click",function(){
+
+    var i = $(".text-right input").val();
+    // console.log($(".text-right input").val());
+    i ++;
+    $(".text-right input").val(i);
+})
+$(".reduce").on("click",function(){
+ 
+    var i = $(".text-right input").val();
+    // console.log($(".text-right input").val());
+    i --;
+    if(i <= 0){
+        return false;
+    }else{
+        $(".text-right input").val(i);
+    }
+})
+
+// 猜你喜欢轮播图
+var mySwiper = new Swiper ('.swiper-container', {
+    loop: true, // 循环模式选项
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })  
