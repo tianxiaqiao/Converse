@@ -165,6 +165,7 @@ li{
     height: 80px;
     position: relative;
     display: none;
+    background: #fff;
     /* display: block; */
 }
 .search-content{
@@ -220,6 +221,7 @@ li{
     height: 397px;
     display: none;
     position: relative;
+    background: #fff;
     /* display: block; */
 }
 

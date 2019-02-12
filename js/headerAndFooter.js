@@ -349,17 +349,17 @@ $(".registeredAccount").on("click",function(evt){
 })
 
 // 二级菜单
-// secondNav("#woman_nav",".woman_nav");
-// secondNav("#man_nav",".man_nav");
-// secondNav("#child_nav",".child_nav");
-// function secondNav(idName,className){
-//     $(idName).on("mouseenter",function(){
-//         $(className).show(1000);
-//     });
-//     $(idName).on("mouseleave",function(){
-//         $(className).hide(1000);
-//     });
-// }
+secondNav("#woman_nav",".woman_nav");
+secondNav("#man_nav",".man_nav");
+secondNav("#child_nav",".child_nav");
+function secondNav(idName,className){
+    $(idName).on("mouseenter",function(){
+        $(className).show(1000);
+    });
+    $(idName).on("mouseleave",function(){
+        $(className).hide(1000);
+    });
+}
 
 // 吸顶菜单
 var _top = 130

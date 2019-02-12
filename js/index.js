@@ -78,3 +78,53 @@ if(banner_timer !== null ) return false;
 sS("start");
 
 
+// 热卖单品滑动效果
+$(".zinif").on("mouseenter",function(){
+    // $(".arrow-slider").css("left","11%");
+    $(".arrow-slider").css({
+        left : "11%",
+        transition: "800ms"
+    });
+    // console.log($(".classify").children("div").eq(7))
+    $(".classify").children("div").eq(3).fadeIn(800);
+    $(".classify").children("div").eq(4).hide();
+    $(".classify").children("div").eq(5).hide();
+    $(".classify").children("div").eq(6).hide();
+})
+$(".dress").on("mouseenter",function(){
+    // $(".arrow-slider").css("left","36%");
+    $(".arrow-slider").css({
+        left : "36%",
+        transition: "800ms"
+    });
+    $(".classify").children("div").eq(4).fadeIn(800);
+    $(".classify").children("div").eq(3).hide();
+    $(".classify").children("div").eq(5).hide();
+    $(".classify").children("div").eq(6).hide();
+})
+$(".cloths").on("mouseenter",function(){
+    // $(".arrow-slider").css("left","61%");
+    $(".arrow-slider").css({
+        left : "61%",
+        transition: "800ms"
+    });
+    $(".classify").children("div").eq(5).fadeIn(800);
+    $(".classify").children("div").eq(3).hide();
+    $(".classify").children("div").eq(4).hide();
+    $(".classify").children("div").eq(6).hide();
+    
+})
+$(".ornaments").on("mouseenter",function(){
+    // $(".arrow-slider").css("left","86%");
+    $(".arrow-slider").css({
+        left : "86%",
+        transition: "800ms"
+    });
+    $(".classify").children("div").eq(6).fadeIn(800);
+    $(".classify").children("div").eq(3).hide();
+    $(".classify").children("div").eq(4).hide();
+    $(".classify").children("div").eq(5).hide();
+})
+
+
+
