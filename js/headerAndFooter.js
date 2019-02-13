@@ -23,79 +23,79 @@ $(".import").on("blur",function(){
 })
 
 // 搜索事件
-// var timer = null;
-// var showNum = 4;
-// $(".import").on("input",function(){
-//     var $url = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${$(".import").val()}&json=1&p=3&sid=1422_21089_28131_26350_28266&req=2&csor=2`;
-//     var dat = {
-//         wd: $(".import").val()
-//     }
-//     console.log($(".import").val());
-//     timer = setTimeout(function(){
-//         clearTimeout(timer);
-//         $.ajax({
-//             type: "get",
-//             url: $url,
-//             async: true,
-//             data: dat,
-//             dataType: 'jsonp',       //已经跨域了
-//             jsonp: 'cb',               //百度的回调函数
-//             success: function (res) {
-//                 // console.log(res);
-//                 var html = "";
-//                 res.s.every((item, index) => {
-//                     html += `<li>${item}</li>`;
-//                     return showNum > index;
-//                 })
-//                 $(".list").html(html);
-//             }
-//         })
-//         timer = null;
-//     },500);
-// })
+var timer = null;
+var showNum = 3;
+$(".import").on("input",function(){
+    var $url = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${$(".import").val()}&json=1&p=3&sid=1422_21089_28131_26350_28266&req=2&csor=2`;
+    var dat = {
+        wd: $(".import").val()
+    }
+    // console.log($(".import").val());
+    timer = setTimeout(function(){
+        clearTimeout(timer);
+        $.ajax({
+            type: "get",
+            url: $url,
+            async: true,
+            data: dat,
+            dataType: 'jsonp',       //已经跨域了
+            jsonp: 'cb',               //百度的回调函数
+            success: function (res) {
+                // console.log(res);
+                var html = "";
+                res.s.every((item, index) => {
+                    html += `<p>${item}</p>`;
+                    return showNum > index;
+                })
+                $(".search-result").html(html);
+            }
+        })
+        timer = null;
+    },500);
+})
 
-// function _throttle(callback,dealy){
-//     // 利用闭包，让 timer 私有化;
-//     var timer = null;
-//     return function(){
-//           clearTimeout(timer);
-//           // 如果已经过了规定的时间可以再次执行代码了;
-//           timer = setTimeout(function(){
-//                callback(); 
-//           },dealy)
-//     }
-// }
+function _throttle(callback,dealy){
+    // 利用闭包，让 timer 私有化;
+    var timer = null;
+    return function(){
+          clearTimeout(timer);
+          // 如果已经过了规定的时间可以再次执行代码了;
+          timer = setTimeout(function(){
+               callback(); 
+          },dealy)
+    }
+}
 
-// function jsonp(url,jsonp_key){
-//     return new Promise(function(resolve,reject){
+function jsonp(url,jsonp_key){
+    return new Promise(function(resolve,reject){
 
-//           // 函数名随机处理避免占用命名空间，避免冲突;
+          // 函数名随机处理避免占用命名空间，避免冲突;
 
-//           var randomName = "_" + Date.now()
-//           // console.log(randomName);
+          var randomName = "_" + Date.now()
+          // console.log(randomName);
 
-//           window[randomName] = function(res){
-//                 // console.log(res);
-//                 resolve(res);
-//           }
-//           // 2. 创建并插入script标签;
-//           var script = document.createElement("script");
+          window[randomName] = function(res){
+                // console.log(res);
+                resolve(res);
+          }
+          // 2. 创建并插入script标签;
+          var script = document.createElement("script");
 
-//           // 当前url之中是否存在 ? （存在问好表示已经有数据了），我应该用& 去拼接数据，反之则用 ?;
-//           url = url + (/\?/.test(url) ? "&" : "?") + jsonp_key + "=" + randomName;
+          // 当前url之中是否存在 ? （存在问好表示已经有数据了），我应该用& 去拼接数据，反之则用 ?;
+          url = url + (/\?/.test(url) ? "&" : "?") + jsonp_key + "=" + randomName;
 
-//           script.src = url;
-//           // 3. 标签放入页面之中;
-//           document.body.appendChild(script);
-//           // 4. 清理垃圾;
-//           script.onload = function(){
-//                 this.remove();
+          script.src = url;
+          // 3. 标签放入页面之中;
+          document.body.appendChild(script);
+          // 4. 清理垃圾;
+          script.onload = function(){
+                this.remove();
 
-//                 window[randomName] = null;
-//                 delete window[randomName];
-//           }
-//     })   
-// }     
+                window[randomName] = null;
+                delete window[randomName];
+          }
+    })   
+}     
 
 
 // 点击登录头像事件
@@ -363,7 +363,7 @@ function secondNav(idName,className){
 }
 
 // 吸顶菜单
-var _top = 130
+var _top = 600
 $(window).on("scroll",function(){
     var e = document.body.scrollTop || document.documentElement.scrollTop;
     // console.log(document.body.scrollTop);
@@ -375,7 +375,8 @@ $(window).on("scroll",function(){
         $(".list").css("font-size","14px");
         $(".list li").css("display","flex");
         $(".list span").css("margin","7px 0 0 5px");
-        $(".man_nav,.woman_nav,.child_nav").css("top","80px");
+        $(".man_nav,.woman_nav,.child_nav").css("top","30px");
+
 
     }else{
         $(".header-content").css("height","80px");
@@ -385,7 +386,7 @@ $(window).on("scroll",function(){
         $(".list").css("font-size","18px");
         $(".list li").css("display","block");
         $(".list span").css("margin","5px auto 0");
-        $(".man_nav,.woman_nav,.child_nav").css("top","130px");
+        $(".man_nav,.woman_nav,.child_nav").css("top","50px");
     }
 })
 

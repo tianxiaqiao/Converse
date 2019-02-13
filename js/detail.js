@@ -130,6 +130,25 @@ $("document").ready(function(){
     }
 })
 
+// 点击立即购买
+$(".now-buy-btn").on("click",function(){
+    // console.log($(".size-select option:checked").text());
+    var shoeSize = $(".size-select option:checked").text();
+    if(isNaN(shoeSize)){
+        $(".sizeError").css("opacity",1);
+    }else{
+        $(".sizeError").css("opacity",0);
+    }
+})
+$(".size-select").bind("change",function(){
+    if(!isNaN($(".size-select option:checked").text())){
+        $(".sizeError").css("opacity",0);
+    }
+})
+
+
+
+
 // 商品数量加减
 $(".add").on("click",function(){
 
@@ -159,3 +178,43 @@ var mySwiper = new Swiper ('.swiper-container', {
       prevEl: '.swiper-button-prev',
     },
   })  
+
+
+// 分页
+var showNum = 4;
+$.ajax("https://list.mogujie.com/search",{
+    dataType : "jsonp"
+})
+.then(render)
+function render(res){
+
+    console.log(res);
+    var list = res.result.wall.list;
+    $(".pagination").pagination({
+        // list.lenght 表示当前数据总量;
+        totalData : list.length,
+        // totalData : 50,
+        // showData 表示当前每页显示多少个;
+        showData : showNum ,
+        // 分页样式
+        mode: 'fixed',
+        // callback 就是用来改变 页码的;
+        callback : page
+    });
+    function page(api){
+        // 根据页码选择要渲染的数组中的项;
+        // 选中开头和结尾;
+        var min = (api.getCurrent() - 1) * showNum;
+        var max = api.getCurrent() * showNum
+
+        // 让模板引擎进行数据渲染;
+        var html = template("item",{ list : list.slice( min,max ) })
+        // 把渲染结果放在 item-wrapper之中;
+        $(".item-wrapper").html(html);
+    }
+    page({
+        getCurrent : function(){
+                return 1;
+        }
+    })
+}

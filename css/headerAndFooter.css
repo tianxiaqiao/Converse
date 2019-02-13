@@ -214,6 +214,23 @@ li{
     cursor:pointer;
 }
 
+/* 搜索下拉菜单 */
+.search-result{
+    width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 1000;
+}
+.search-result p{
+    width: 100%;
+    line-height: 50px;
+    /* height: 40px; */
+    font-size: 24px;
+    color: #999;
+}
 
 /* 登录注册下拉页面总的样式 */
 .header-expanded{
@@ -501,6 +518,7 @@ li{
     height: 50px;
     text-align: center;
     background: #464646;
+    position: relative;
 }
 .list{
     width: 65%;
@@ -540,7 +558,7 @@ li{
     background: #fff;
     position: absolute;
     left: 0;
-    top: 130px;
+    top: 50px;
     width: 100%;
     height: 268px;
     /* display: block; */
@@ -619,7 +637,7 @@ li{
     margin: 7px 0 0 5px;
 } */
 /* .man_nav,.woman_nav,.child_nav{
-    top: 80px;
+    top: 30px;
 } */
 
 
@@ -634,3 +652,86 @@ li{
     /* background: red; */
 }
 
+
+/* 底部 */
+/* 购物指南 */
+.sitemap{
+    width: 1000px;
+    margin: 80px auto 0;
+    text-align: center;
+    padding-top:30px ;
+    border-top:1px solid #ccc; 
+}
+.sitemap a:hover{
+    color: #ccc;
+}
+.sitemap dt a{
+    font-size: 16px;
+    font-weight: bold;
+}
+.sitemap dl a{
+    text-decoration: none;
+    line-height: 20px;
+    color: #333;
+}
+.sitemap dl{
+    width: 24%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 280px;
+}
+.sitemap dl dt{
+    margin-bottom: 20px;
+}
+.sitemap dl dd{
+    font-size: 14px;
+}
+.mgb20{
+    margin-bottom: 20px;
+}
+
+/* 底部 */
+.footer-box{
+    width: 100%;
+    background: #000;
+    color: #fff;
+}
+.footer-last{
+    height: 140px;
+    margin: 0 auto;
+    width: 1000px;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom:5px ;
+}
+.footer-last a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-list{
+    line-height: 30px;
+    padding: 15px 0;
+    width: auto;
+    list-style: none;
+    /* display: flex; */
+}
+.footer-list i{
+        font-style: normal;
+        display: inline-block;
+        margin: 0 10px;
+}
+.primary-logo{
+    margin: 0 auto;
+    width: 60px;
+    height: 40px;
+    background: url(../img/logo02.jpg) no-repeat;
+    background-size: 60px 40px;
+}
+.footer-bottom{
+    margin-top:5px ;
+    display: block;
+    text-align: center;
+    width: 100%;
+}

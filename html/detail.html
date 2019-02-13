@@ -12,6 +12,472 @@
     <title>3</title>
 </head>
 <body>
+    <header>
+        <div class="header-content">
+            <!-- 首行logo -->
+            <div class="logo">
+                <a href="#">
+                    <img src="../img/logo.jpg" alt="">
+                </a>  
+            </div>
+
+            <!-- 首行右侧帮助 -->
+            <div class="right-headerbox">
+                <a href="#">
+                    <span>?</span>
+                </a>
+            </div>
+
+            <!-- 首行右侧搜索 -->
+            <div class="right-headerbox">
+                <a href="#" class="magnifier">
+                    <span  class="iconfont">&#xe62a;</span>
+                </a>
+            </div>
+            
+            <!-- 首行右侧聊天 -->
+            <div class="right-headerbox">
+                <a href="#">
+                    <span class="iconfont">&#xe615;</span>
+                </a>
+            </div>
+
+            <!-- 首行购物车 -->
+            <div class="left-headerbox">
+                <a href="#">购物车</a>
+                <span>0</span>
+            </div>
+
+            <!-- 首行登录注册 -->
+            <div class="login-headerbox">
+                    <a href="#" class="login">登录</a>
+                    <a href="#">/</a>
+                    <a href="#" class="registration">注册</a>
+                    <span id="login" class="iconfont">&#xe63c;</span>
+            </div>
+        </div>  
+        
+        
+        
+
+        <!-- 箭头 -->
+        <!-- <div class="arrow"></div> -->
+        <!-- 右侧点击搜索按钮弹出的搜索框 -->
+        <div class="search">
+            <div class="arrow"></div>
+            <div class="search-content">
+                <div class="search-value">
+                    <input type="text" class="import" value="想找什么随便搜">
+                    <ul id="list">
+
+                    </ul>
+                </div>
+                <div class="search-button">
+                    <span class="iconfont">&#xe62a;</span>
+                </div>
+                <div class="search-close">X</div>
+                <div class="search-result">
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 登录注册下拉页面 -->
+        <div class="header-expanded">
+            <div class="arrow"></div>
+            <div class="loginbox">
+                <div class="loginbox_left">
+                    <ul>
+                        <li>还未注册？</li>
+                        <li>
+                            <div class="loginAccount" id="loginAccount">
+                                    注册账户>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="loginbox_center">
+                    <h5>您可以直接登录</h5>
+                    <ul class="externalLogin">
+                        <li><img src="../img/login01.jpg" alt=""></li>
+                        <li><img src="../img/login02.jpg" alt=""></li>
+                        <li><img src="../img/login03.jpg" alt=""></li>
+                        <li><img src="../img/login04.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <div class="loginbox_right">
+                    <ul>
+                        <li>已经成为会员？</li>
+                        <li>
+                            <div>
+                                <input type="text" placeholder="邮箱/手机" id="loginID">
+                            </div>
+                            <span class="accountError">请输入有效的电子邮箱/手机号码！</span>
+                        </li>
+                        <li>
+                            <div>
+                                <input type="password" placeholder="账户密码" id="loginPas">
+                            </div>
+                            <span class="pasError">密码必须在6-12个字符之间！</span>
+                        </li>
+                        <li>
+                            <div class="validation">
+                                <p class="blueDot"></p>
+                                <p>点击按钮进行验证</p>
+                            </div>
+                        </li>
+                        <li>
+                            一旦登录，即表明你同意匡威的<a href="#">法律声明</a>和<a href="#">使用规则</a>
+                            <button type="submit" class="loginAccount">
+                                    登录>
+                            </button>
+                        </li>
+                        <li>
+                            <div class="remember">
+                                <input type="checkbox" class="remember_pas">记住登录名
+                            </div>
+                            <a href="#">忘记密码？</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> 
+
+            <!-- 注册页面 -->
+            <form class="registerbox" action="./mysql.php" method="GET">
+                <div class="registerbox_top">
+                    <ul>
+                        <li>
+                            手机号码
+                            <b>*</b>
+                            <div class="account">
+                                <input type="text" id="phone" name="phone" placeholder="135xxxx3333">
+                            </div>
+                            <span class="phone_inputError">请输入11位有效中国手机号码！</span>
+                            <span class="phone_blankError">请输入手机号码！</span>
+                        </li>
+                        <li>
+                            邮箱
+                            <b>*</b>
+                            <div class="account">
+                                <input type="text" id="email" name="email" placeholder="example@converse.com">
+                            </div>
+                            <span class="mail_inputError">请输入有效的电子邮箱地址！</span>
+                            <span class="mail_blankError">请输入电子邮箱地址！</span>
+                        </li>
+                        <li>
+                            性别
+                            <b>*</b>
+                            <div class="sex">
+                                <div class="man">
+                                    <input name="sex" type="radio" checked="checked"/>男的
+                                </div>
+                                <div class="woman">
+                                    <input name="sex" type="radio" />女的
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="registerbox_middle">
+                    <ul>
+                        <li>
+                            输入密码
+                            <b>*</b>
+                            <div class="account">
+                                <input type="password" id="password" name="password" placeholder="密码至少为6位字符">
+                            </div>
+                            <span class="pas_inputError">密码为6-12位字符！</span>
+                            <span class="pas_blankError">请输入密码</span>
+                        </li>
+                        <li>
+                            确认密码
+                            <b>*</b>
+                            <div class="account">
+                                <input type="password" id="confirmPassword" placeholder="请再次输入密码">
+                            </div>
+                            <span class="confirmPas_inputError">抱歉，两次输入的密码不匹配！</span>
+                            <span class="confirmPas_blankError">请再次输入密码</span>
+                        </li>
+                        <li>
+                            生日（年-月-日）
+                            <b>*</b>
+                            <div class="birthday">
+                                <select name="years" id="years">
+                                    <!-- <option value="2019">2019</option> -->
+                                </select>
+                                <select name="months" id="months">
+                                    <!-- <option value="1">1</option> -->
+                                </select>
+                                <select name="days" id="days">
+                                    <!-- <option value="1">1</option> -->
+                                </select>  
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="registerbox_bottom">
+                    <ul>
+                        <li>
+                            <div class="validation">
+                                <p class="blueDot"></p>
+                                <p>点击按钮进行验证</p>
+                            </div>
+                        </li>
+                        <li>
+                            短信验证码
+                            <b>*</b>
+                            <div class="shortMessage">
+                                <input type="text" id="inCode">
+                                <h5 class="sendText">发送短信验证码</h5>
+                            </div>
+                            <span class="shortMes_inputError">您填写的短信验证码有误，请重新输入！</span>
+                        </li>
+                        <li>
+                            一旦创建账户，即表明你同意匡威的<a href="#">法律声明</a>和<a href="#">使用规则</a>
+                            <!-- <input type="submit" class="registeredAccount"> -->
+                            <button type="submit" class="registeredAccount">
+                                注册账户>
+                            </button>
+                        </li>
+                    </ul>                    
+                </div>
+            </form> 
+        </div>
+        <!-- 导航 -->
+        <div class="navigation">
+            <ul class="list">
+                <li  id="man_nav">
+                    <a href="#">男的</a>
+                    <span></span>
+                    <!-- 二级导航01 -->
+                    <div class="man_nav">
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide01.jpg" alt="">
+                                    <i>踩的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide02.jpg" alt="">
+                                    <i>穿的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide03.jpg" alt="">
+                                    <i>T恤</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide04.jpg" alt="">
+                                    <i>戴的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide05.jpg" alt="">
+                                    <i>新产品</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide06.jpg" alt="">
+                                    <i>优惠</i> 
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide07.jpg" alt="">
+                                    <i>经典款</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide08.jpg" alt="">
+                                    <i>CHUCK 70</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide09.jpg" alt="">
+                                    <i>ONE STAR</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide10.jpg" alt="">
+                                    <i>ALL STAR</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide11.jpg" alt="">
+                                    <i>CONS</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide12.jpg" alt="">
+                                    <i>JACK PURCELL</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide13.jpg" alt="">
+                                    <i>CHUCK JI</i> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li id="woman_nav">
+                    <a href="#">女的</a>
+                    <span></span>
+                    <!-- 二级导航02 -->
+                    <div class="woman_nav">
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide13.jpg" alt="">
+                                    <i>踩的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/chuande01.jpg" alt="">
+                                    <i>穿的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/chuande02.jpg" alt="">
+                                    <i>T恤</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/chuande03.jpg" alt="">
+                                    <i>戴的</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide05.jpg" alt="">
+                                    <i>新产品</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide06.jpg" alt="">
+                                    <i>优惠</i> 
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide07.jpg" alt="">
+                                    <i>经典款</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide08.jpg" alt="">
+                                    <i>CHUCK 70</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide09.jpg" alt="">
+                                    <i>ONE STAR</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide10.jpg" alt="">
+                                    <i>ALL STAR</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide11.jpg" alt="">
+                                    <i>CONS</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide12.jpg" alt="">
+                                    <i>JACK PURCELL</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/caide13.jpg" alt="">
+                                    <i>CHUCK JI</i> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>  
+                </li>
+                <li id="child_nav">
+                    <a href="#">儿童</a>
+                    <span></span> 
+                        <!-- 二级导航03 -->
+                    <div class="child_nav">
+                        <ul class="dressing">
+                            <li>
+                                <a href="">
+                                    <img src="../img/xiaohai01.jpg" alt="">
+                                    <i>(1-4岁)</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/xiaohai02.jpg" alt="">
+                                    <i>(4-8岁)</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/xiaohai03.jpg" alt="">
+                                    <i>(4-12岁)</i> 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="../img/xiaohai04.jpg" alt="">
+                                    <i>(8-12岁)</i> 
+                                </a>
+                            </li>
+                        </ul>
+                    </div>   
+                </li>
+                <li>
+                    <a href="#">型人搭配</a>
+                    <span></span>
+                </li>
+                <li>
+                    <a href="#">联名合作款</a>
+                    <span></span>
+                </li>
+                <li>
+                    <a href="#">店铺分布</a>
+                    <span></span>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div id="floating">
+        <img src="../img/floating.png" alt="">
+    </div>
     <section>
         <!-- 上面div -->
         <div class="fill"></div>
@@ -126,7 +592,7 @@
                             <div class="text-left">请输入您的尺码</div>
                             <div class="text-right">
                                 <select class="size-select">
-                                    <option>请选择尺码</option>
+                                    <option value="选择尺码">请选择尺码</option>
                                 </select>
                             </div>
                     </div>
@@ -143,11 +609,11 @@
                     </div>
                     <p class="sizeError">请选择尺码</p>
                     <!-- 立即购买按钮 -->
-                    <a href="#" class="now-buy-btn">
+                    <a href="###" class="now-buy-btn">
                         <span>立即购买</span>
                     </a>
                     <!-- 加入购物车按钮 -->
-                    <a href="#" class="add-buycart-btn">
+                    <a href="###" class="add-buycart-btn">
                         <span>+添加到购物车</span>
                     </a>
                 </div>
@@ -183,9 +649,72 @@
             <!-- 猜你喜欢轮播图 -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide">
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo01.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo02.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo03.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo04.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-slide">
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo05.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo06.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo07.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo08.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                    </div>
+                    <div class="swiper-slide">
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo09.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo10.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo11.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                        <dl class="swiper-list">
+                            <dt><a href="###"><img src="../img/lunbo12.png" alt=""></a></dt>
+                            <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                            <dd>¥599.00</dd>
+                        </dl>
+                    </div>
                 </div>
 
                 <!-- 如果需要导航按钮 -->
@@ -195,7 +724,7 @@
             </div>
         </div>
 
-        <!-- 评论 -->
+        <!-- 评价 -->
         <div class="evaluate">
             <div class="evaluate-box">
                 <h1>379  评论</h1>
@@ -203,16 +732,288 @@
             </div>
             <div class="c-c-top">
                 <div class="comment-stars">
-                    <span style="width: 171.5px;"></span>
+                    <span>
+                        <img src="../img/wuxing.jpg" alt="">
+                    </span>
                 </div>
                 <div class="c-s-level">4.9</div>
             </div>
+
+            <!-- 分页 -->
+            <div class="pagination-container">
+                <div class="item-wrapper">  
+                </div>                      
+            </div>       
+            <div class="pagination">
+            </div>       
+        </div>
+
+        <!-- 最近浏览 -->
+        <div class="recently">
+            <div class="evaluate-box">
+                <h1>您最近查看的商品</h1>
+                <hr>
+            </div>
+            <div class="recently-box">
+                <dl class="recently-list">
+                    <dt><a href="###"><img src="../img/liulan01.png" alt=""></a></dt>
+                    <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                    <dd>¥599.00</dd>
+                </dl>
+                <dl class="swiper-list">
+                    <dt><a href="###"><img src="../img/liulan02.png" alt=""></a></dt>
+                    <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                    <dd>¥599.00</dd>
+                </dl>
+                <dl class="swiper-list">
+                    <dt><a href="###"><img src="../img/liulan03.png" alt=""></a></dt>
+                    <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                    <dd>¥599.00</dd>
+                </dl>
+                <dl class="swiper-list">
+                    <dt><a href="###"><img src="../img/liulan04.png" alt=""></a></dt>
+                    <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
+                    <dd>¥599.00</dd>
+                </dl>
+            </div>
         </div>
     </section>
+    <footer>
+        <!-- 购物指南 -->
+        <div class="sitemap">
+            <dl>
+                <dt>
+                    <a href="###">男的</a>
+                </dt>
+                <dd>
+                    <a href="###">CHUCK
+                        TAYLOR ALL STAR</a>
+                </dd>
+                <dd>
+                    <a href="###">CONVERSE
+                        CONS</a>
+                </dd>
+                <dd>
+                    <a href="###">JACK
+                        PURCELL</a>
+                </dd>
+                <dd class="mgb20">
+                    <a href="###">CHUCK II</a>
+                </dd>
+                <dd>
+                    <a href="###">踩的</a>
+                </dd>
+                <dd>
+                    <a href="###">穿的</a>
+                </dd>
+                <dd>
+                    <a href="###">戴的</a>
+                </dd>
+                <dd>
+                    <a href="###">优惠</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="###">女的</a>
+                </dt>
+                <dd>
+                    <a href="###">CHUCK
+                        TAYLOR ALL STAR</a>
+                </dd>
+                <dd>
+                    <a href="###">CONVERSE
+                        CONS</a>
+                </dd>
+                <dd>
+                    <a href="###">JACK
+                        PURCELL</a>
+                </dd>
+                <dd class="mgb20">
+                    <a href="###">CHUCK II</a>
+                </dd>
+                <dd>
+                    <a href="###">踩的</a>
+                </dd>
+                <dd>
+                    <a href="###">穿的</a>
+                </dd>
+                <dd>
+                    <a href="###">戴的</a>
+                </dd>
+                <dd>
+                    <a href="###">优惠</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="###">儿童</a>
+                </dt>
+                <dd>
+                    <a href="###">CHUCK
+                        TAYLOR ALL STAR</a>
+                </dd>
+                <dd>
+                    <a href="###">CONVERSE
+                        CONS</a>
+                </dd>
+                <dd>
+                    <a href="###">&nbsp;&nbsp;&nbsp;</a>
+                </dd>
+                <dd class="mgb20">
+                    <a href="###">&nbsp;&nbsp;&nbsp;</a>
+                </dd> 
+                <dd>
+                    <a href="###">踩的</a>
+                </dd>
+                <dd>
+                    <a href="###">穿的</a>
+                </dd>
+                <dd>
+                    <a href="###">戴的</a>
+                </dd>
+                <dd>
+                    <a href="###">优惠</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="###">GLOBAL</a>
+                </dt>
+                <dd>
+                    <a href="###">CONVERSE GLOBAL SITES</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="###">我的账户</a>
+                </dt>
+                <dd>
+                    <a href="###">现有订单</a>
+                </dd>
+                <dd>
+                    <a href="###">过去订单</a>
+                </dd>
+                <dd>
+                    <a href="###">退换货</a>
+                </dd>
+                <dd>
+                    <a href="###">账户设置</a>
+                </dd>
+                <dd>
+                    <a href="###">地址簿</a>
+                </dd>
+                <dd>
+                    <a href="###">我的优惠券</a>
+                </dd>
+                <dd>
+                    <a href="###">我的收藏</a>
+                </dd>
+                <dd>
+                    <a href="###">我的评论</a>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a href="###">帮助和购物指南</a>
+                </dt>
+                <dd>
+                    <a href="###">账户</a>
+                </dd>
+                <dd>
+                    <a href="###">订单</a>
+                </dd>
+                <dd>
+                    <a href="###">尺码</a>
+                </dd>
+                <dd>
+                    <a href="###">退货和退款</a>
+                </dd>
+                <dd>
+                    <a href="###">换货</a>
+                </dd>
+                <dd>
+                    <a href="###">配送</a>
+                </dd>
+                <dd>
+                    <a href="###">联系我们</a>
+                </dd>
+                <dd>
+                    <a href="###">常见问题</a>
+                </dd>
+            </dl>
+            
+            <dl>
+                <dt>
+                    <a href="###">NIKE</a>
+                </dt>
+                <dd>
+                    <a href="###">NIKE+</a>
+                </dd>
+                <dd>
+                    <a href="###">JORDAN</a>
+                </dd>
+            </dl>                 
+        </div>
+
+        <!-- 底部 -->
+        <div class="footer-box">
+            <div class="footer-last">
+                <div class="footer-list">
+                    <i><a href="###">关于我们</a></i>
+                    <i><a href="###">帮助和购物指南</a></i>
+                    <i><a href="###">法律声明</a></i>
+                    <i><a href="###">使用规则</a></i>
+                </div>
+                <a href="###">
+                    <div class="primary-logo">
+                    </div>
+                </a>
+                <p class="footer-bottom">@匡威体育用品（中国）有限公司 保留所有权利&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备11044134号-2
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="###">
+                        <img src="../img/gongan.png">沪公网安备 31011002001667号
+                    </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="###">
+                        <img src="../img/zhizhao.png">电子营业执照
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.js"></script>
+
+    <!-- 分页 -->
+    <script src="http://www.jq22.com/demo/pagination20160204/jquery.pagination.js"></script>
+    <script src="../js/art-template.js"></script>
+
+
     <script src="../js/detail.js"></script>
-    <!-- <script src="../js/headerAndFooter.js"></script> -->
+    <script src="../js/headerAndFooter.js"></script>
     <!-- <script src="../js/index.js"></script>     -->
+
+    <!-- 分页 -->
+    <script type="text/html" id="item">
+        {{each list item}}
+            <div class="item">
+                <ul>
+                    <li>
+                        <img src="../img/wuxing.jpg" alt="">
+                        <span>2017-06-02</span>
+                    </li>
+                    <li>{{item.itemMarks}}</li>
+                    <!-- <li>好</li> -->
+                    <li>{{item.price}}</li>
+                    <li>
+                        <p>Converse回复 | 2018-03-18</p>
+                        <!-- <p>亲爱的顾客，非常感谢！您的满意是我们的追求！我们将一如即往的为您提供优质产品和服务，期待您的下次光临！</p> -->
+                        <p>{{item.acm}}</p>
+                    </li>
+                </ul>
+            </div> 
+        {{/each}}
+  </script>
 </body>
 </html>

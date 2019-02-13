@@ -263,5 +263,228 @@
     padding-bottom:20px ; 
 }
 .new-list:nth-child(4){
-    margin-bottom:150px; 
+    margin-bottom:100px; 
+}
+
+/* 街头先型 */
+.street-box{
+    width: 1000px;
+    margin: 0 auto;
+}
+.street-box>img{
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+.street{
+    width: 100%;
+    /* height: 100px;
+    background: red; */
+    display: flex;
+    justify-content: space-between;
+}
+.street>div{
+    width: 48%;
+    /* height: 300px; */
+    /* background: red; */
+    position: relative;
+    margin: 20px 0 40px;
+}
+/* 贴膜 */
+.film{
+    width: 100%;
+    height: 360px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0;
+}
+.film:hover{
+    opacity: .5;
+}
+.street>div>a{
+    color: #000;
+    text-decoration: none;
+}
+.street>div img{
+    width: 100%;
+}
+.street>div>a:hover{
+    color: #ccc;
+    transition: 1s;
+}
+.street>div a h1{
+    font-size: 23px;
+    margin: 17px 0 17px 0;
+}
+.street>div a p{
+    line-height: 20px;
+    font-size: 12px;
+}
+
+/* 按钮 */
+.buy-button{
+    margin-top: 16px;
+}
+.buy-button a{
+    line-height: 48px;
+    font-size: 16px;
+    height: 48px;
+    padding: 0 3px 0 7px;
+    border: 1px solid #000;
+    text-align: center;
+    display: inline-block;
+    width: 38%;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+}
+.buy-button a:hover{
+    transition: 0;
+    background: #fff;
+    color: #000;
+}
+
+
+/* 潮流 */
+.trend-box{
+    width: 1000px;
+    margin: 0 auto;
+}
+.trend-box>img{
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+.trend{
+    width: 100%;
+    /* height: 100px;
+    background: red; */
+    display: flex;
+    justify-content: space-between;
+}
+.trend>div{
+    width: 32%;
+    position: relative;
+    margin: 20px 0 80px;
+}
+/* 贴膜 */
+.film-small{
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0;
+}
+.film-small:hover{
+    opacity: .5;
+}
+.trend>div>a{
+    color: #000;
+    text-decoration: none;
+}
+.trend>div img{
+    width: 100%;
+}
+.trend>div>a:hover{
+    color: #ccc;
+    transition: 1s;
+}
+.trend>div a h1{
+    font-size: 23px;
+    margin: 17px 0 17px 0;
+    font-weight: normal;
+}
+.trend>div a p{
+    line-height: 20px;
+    font-size: 12px;
+}
+
+/* 按钮 */
+.buyButton-small{
+    margin-top: 16px;
+}
+.buyButton-small a{
+    line-height: 42px;
+    font-size: 18px;
+    height: 42px;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+    width: 33%;
+    color: #000;
+    text-decoration: underline;
+}
+.buyButton-small a:hover{
+    transition: 0;
+    color: #ccc;
+}
+
+/* 关注匡威 */
+.attention-box{
+    background: #464646;
+    width: 100%;
+    height: 268px;
+    color: #FFF;
+    text-align: center;
+    padding-bottom:80px ;
+}
+.attention-box h1{
+    font-size: 30px;
+    margin: 75px auto 35px;
+    display: inline-block;
+    font-weight: bold;
+}
+.attention-box p{
+    font-size: 16px;
+    line-height: 24px;
+}
+.friending{
+    margin: 37px auto 0;
+    width: 520px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.friending a{
+    width: 75px;
+    height: 75px;
+}
+.friending a:nth-child(1){
+    background: url(../img/guanzhu01.jpg) no-repeat;
+    background-size: 75px;
+}
+.friending a:nth-child(1):hover{
+    background-position-y: -75px;
+}
+.friending a:nth-child(2){
+    background: url(../img/guanzhu02.jpg) no-repeat;
+    background-size: 75px;
+}
+.friending a:nth-child(2):hover{
+    background-position-y: -75px;
+}
+.friending a:nth-child(3){
+    background: url(../img/guanzhu03.jpg) no-repeat;
+    background-size: 75px;
+}
+.friending a:nth-child(3):hover{
+    background-position-y: -75px;
+}
+.friending a:nth-child(4){
+    background: url(../img/guanzhu04.jpg) no-repeat;
+    background-size: 75px;
+}
+.friending a:nth-child(4):hover{
+    background-position-y: -75px;
+}
+.friending a:nth-child(5){
+    background: url(../img/guanzhu05.jpg) no-repeat;
+    background-size: 75px;
+}
+.friending a:nth-child(5):hover{
+    background-position-y: -75px;
 }
