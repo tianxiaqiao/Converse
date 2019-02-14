@@ -126,5 +126,43 @@ $(".ornaments").on("mouseenter",function(){
     $(".classify").children("div").eq(5).hide();
 })
 
+// 首页商品列表加载
 
-
+$.ajax({
+    url : "./index.json",
+    type : "GET",
+    dataType : "json",
+})
+.then(render)
+function render(res){
+    // console.log(res)
+    var html = "";
+    $.each(res,function(index,item){
+                console.log(item);
+                // console.log(index);
+                html += 
+                `<div class="new-list">
+                    <dl class="list-head">
+                        <dt><a href="###"><img src="${item.image}" alt=""></a></dt>
+                        <dd><a href="###">${item.title}</a></dd>
+                        <dd>${item.price}</dd>
+                    </dl>
+                    <dl class="list-head">
+                        <dt><a href="###"><img src="${item.image}" alt=""></a></dt>
+                        <dd><a href="###">${item.title}</a></dd>
+                        <dd>${item.price}</dd>
+                    </dl>
+                    <dl class="list-head">
+                        <dt><a href="###"><img src="${item.image}" alt=""></a></dt>
+                        <dd><a href="###">${item.title}</a></dd>
+                        <dd>${item.price}</dd>
+                    </dl>
+                    <dl class="list-head">
+                        <dt><a href="###"><img src="${item.image}" alt=""></a></dt>
+                        <dd><a href="###">${item.title}</a></dd>
+                        <dd>${item.price}</dd>
+                    </dl>
+                </div>`
+                $(".new-show").html(html);
+            })
+}

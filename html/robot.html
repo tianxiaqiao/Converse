@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>请与我对话</title>
+    <style>
+*{
+    font-size: 14px;
+     padding:0; 
+     margin:0;
+}
+.main{
+	position: relative;
+	margin: 20px auto;
+	border: 1px solid steelblue;
+	width: 430px;
+	height: 400px;
+}
+.msgInput{
+	display: block;
+	width: 406px;
+	height: 60px;
+	margin: 10px auto;
+	
+}
+.sendbtn{
+	position: absolute;
+	width: 100px;
+	height: 29px;
+	bottom: 5px;
+	right: 10px;
+}
+.content{
+	list-style: none;
+	width: 410px;
+	height: 280px;
+	margin: 5px auto;
+	border: 1px dotted #D1D3D6;
+	overflow-y: scroll;
+}
+img{
+    width: 50px;
+    
+     
+}
+.rightImg{
+    position: relative;
+    top: 10px;
+    left: 340px;  
+
+}
+.leftImg{
+
+    float: left;
+    margin: 10px 0 0 15px; 
+}
+.left{
+    width:auto;
+	max-width: 180px;
+	height: auto;
+	word-break: break-all;
+	margin:23px 5px 5px 10px;
+	padding: 3px;
+	border-radius: 5px;
+	float: left;
+	text-align: left;
+	background-color: lightgrey;
+}
+.right{
+    width:auto;
+	max-width: 180px;
+	height: auto;
+	word-break: break-all;
+	margin: 23px 70px 5px 5px;
+	padding: 3px;
+	border-radius: 5px;
+	float: right;
+	text-align: right;
+	background-color: yellowgreen;
+}
+    </style>
+</head>
+<body>
+    <!-- 聊天对话框 -->
+    <div id="main" class="main">
+        <div id="content" class="content">
+
+                <!-- <p class="right">hi</p>
+                <img class="rightImg" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548331829&di=c529752800f88103b37eb455c80248d2&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F04%2F20180704100609_rQA2m.jpeg" alt="">
+                <div style="clear: both;" class="clear"></div>
+ 
+     
+
+                <img class="leftImg" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548333204&di=657e1c00b18428444364c499f709db93&imgtype=jpg&er=1&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F17%2F08%2F30%2F09d76bce7221f0c8f66cbd04b0d95001.jpg" alt="">
+                <p class="left">hehe</p>
+                <div style="clear: both;" class="clear"></div> -->
+ 
+        </div>
+        <textarea id="msg_input" class="msgInput"></textarea>
+        <button id="sendbtn" class="sendbtn">发送</button>
+    </div>
+    <script>
+        var content = document.getElementById("content");
+ 
+        var btn = document.querySelector(".sendbtn");
+        var input = document.getElementById("msg_input");
+        btn.onclick = function(){
+            if(input.value.length === 0 )return false;
+            // console.log(right)
+            var rLi = document.createElement("li");
+            var img = document.createElement("img");
+            var oDiv = document.createElement("div");
+            
+
+            img.className = "rightImg";
+            img.src = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548331829&di=c529752800f88103b37eb455c80248d2&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201807%2F04%2F20180704100609_rQA2m.jpeg"
+
+
+            oDiv.style.clear = "both";
+            rLi.className = "right";
+            content.appendChild(rLi);
+            content.appendChild(img);
+            content.appendChild(oDiv);
+            
+            // console.log(right)
+            // console.log(clear)
+            // console.log(input.value);
+            rLi.innerHTML = input.value;
+            rLi.scrollIntoView();
+            fn()
+            input.value = "";
+        }
+
+
+        // 键盘事件
+        input.onkeydown = function(evt){
+            var e = evt || window.event;
+            var keyCode = e.which || e.keyCode;
+            if(keyCode === 13){
+                btn.onclick();
+                return false;
+            }
+        }
+
+
+         //创建机器人
+        function fn(){
+            
+            var xhr =  new XMLHttpRequest();
+            xhr.open("GET","http://www.tuling123.com/openapi/api?key=2465e182e4154777a3a02da0ccaa6c88&userid=1&info="+input.value );
+            xhr.send();
+            // console.log(input.value);
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState==4 && xhr.status == 200 ){
+                    // console.log(xhr);
+                    // console.log(1);
+                    var img = document.createElement("img");
+                    var lLi = document.createElement("li");
+                    var oDiv = document.createElement("div");
+
+                    
+
+            img.className = "leftImg";
+            img.src = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548333204&di=657e1c00b18428444364c499f709db93&imgtype=jpg&er=1&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F17%2F08%2F30%2F09d76bce7221f0c8f66cbd04b0d95001.jpg"
+
+
+
+                    oDiv.style.clear = "both";
+                    lLi.className = "left";
+                    content.appendChild(img);
+                    content.appendChild(lLi);
+                    content.appendChild(oDiv);
+                    
+                    // console.log(right)
+                    // console.log(clear)
+                    // console.log(input.value);
+                    lLi.innerHTML = JSON.parse(xhr.responseText).text;
+                    lLi.scrollIntoView();
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>

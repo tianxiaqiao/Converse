@@ -1,19 +1,4 @@
 
-
-// 放大镜
-// var focus = $(".focus");
-// var big_wrap = $(".magnifier-big");
-// var small_wrap = $(".magnifier-small");
-// // console.log($(".magnifier-big"));
-// var big_bg = $(".magnifier-big").children(":first");
-// console.log(big_bg);
-// var small_bg = $(".magnifier-small").children(":first");
-// console.log(small_bg);
-// var choice_wrap = $(".magnifier-choice");
-// var choice_items = $(".magnifier-choice").children();
-
-
-
 // 放大镜
 // 1. 计算比例;
 // 小图焦点;
@@ -99,7 +84,7 @@ choice_items.forEach((item)=>{
 })
 
 function choice(item){
-        // 1. 怎么获取路径啊?  data-big  data-samll;
+        // 1. 获取路径  data-big  data-samll;
 
         // 先清空;
         // console.log(item);      
@@ -147,8 +132,6 @@ $(".size-select").bind("change",function(){
 })
 
 
-
-
 // 商品数量加减
 $(".add").on("click",function(){
 
@@ -188,7 +171,7 @@ $.ajax("https://list.mogujie.com/search",{
 .then(render)
 function render(res){
 
-    console.log(res);
+    // console.log(res);
     var list = res.result.wall.list;
     $(".pagination").pagination({
         // list.lenght 表示当前数据总量;

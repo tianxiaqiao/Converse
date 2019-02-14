@@ -44,11 +44,6 @@ section{
 .commodity-left{
     width: 22%;
 }
-.commodity-list{
-    width: 75%;
-    height: 100px;
-    background: #ccc;
-}
 
 .screen{
     border: 1px solid #b7b7b7;
@@ -142,4 +137,70 @@ section{
     border: 2px solid #000;
     text-decoration: none;
     color: #000;
+}
+
+/* 右侧 */
+.commodity-right{
+    width: 75%;
+}
+.filter-condition{
+    display: flex;
+}
+.filter-condition h1{
+    /* line-height: 40px; */
+    font-size: 14px;
+    margin: 0 20px;
+    font-weight: normal;
+    padding-top:13px ;
+}
+.filter-condition ul{
+    display: flex;
+    padding-top:10px ;
+}
+.filter{
+    font-size: 14px;
+    /* padding: 0 15px; */
+    padding: 3px 15px;
+    border: 1px solid #ccc;
+    margin-right:5px ;
+    cursor: pointer;
+}
+.filter.active{
+    background: #000;
+    border: 1px solid #000;
+    color: #fff;
+}
+
+
+
+/* 商品列表 */
+.commodity-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px auto 80px;
+    text-align: center;
+    padding-bottom:20px ; 
+}
+.commodity-box{
+    width: 33%;
+    height: 300px;
+    font-size: 14px;
+    /* padding: 5px; */
+    box-sizing: border-box;
+}
+.commodity-box a{
+    color: #000;
+    text-decoration: none;
+}
+.commodity-box img{
+    /* width: 66%; */
+    width: 10%;
+    height: 10%;
+}
+.commodity-box dd:nth-child(2){
+    margin:10px 0 50px 0 ;
+}
+.commodity-box:hover{
+    border: 1px solid #ccc;
 }
