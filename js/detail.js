@@ -164,7 +164,7 @@ var mySwiper = new Swiper ('.swiper-container', {
 
 
 // 分页
-var showNum = 4;
+var showNum = 5;
 $.ajax("https://list.mogujie.com/search",{
     dataType : "jsonp"
 })

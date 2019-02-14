@@ -1,0 +1,859 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    width: 100%;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    /* position: relative; */
+    position: sticky;
+    top: 0; 
+    z-index: 20;
+}
+.header-content{
+    width: 100%;
+    height: 80px;
+    background: #000;
+    box-sizing: border-box;
+    padding: 0 84px 0 68px;  
+    position: relative;
+}
+li{
+    list-style: none;
+}
+/* logo样式 */
+.logo img{
+    width: 163px;
+    height: 22px;
+    float: left;
+    position: absolute;
+    top: 50%;
+    margin-top: -11px;
+}  
+
+/* 右侧帮助、搜索、聊天样式 */
+.right-headerbox{
+    /* width: 80px; */
+    padding-left: 30px;
+    height: 100%;
+    float: right;
+}
+.right-headerbox a{
+    display: block;
+    width: 50px;
+    height: 100%;
+    float: right;
+}
+.right-headerbox span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: #464646;
+    float: right;
+    text-align: center;
+    line-height: 30px;
+    color:#fff;
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    margin: -15px 0 0 20px;
+}
+.right-headerbox span:hover{
+    background: #b7b7b7;
+}
+
+/* 购物车样式 */
+.left-headerbox{
+    /* width: 80px; */
+    padding-left: 36px;
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 80px;
+}
+.left-headerbox a{
+    display: block;
+    width: 50px;
+    height: 100%;
+    float: left;
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+} 
+.left-headerbox span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: #940000;
+    float: right;
+    text-align: center;
+    line-height: 30px;
+    color:#fff;
+    font-size: 18px;
+}
+.left-headerbox a:hover{
+    text-decoration: underline;
+}
+
+/* 首行登录注册样式 */
+.login-headerbox{
+    width: 116px;
+    height: 100%;
+    float: right;
+    line-height: 80px;
+    position: relative;
+    cursor:pointer;
+}
+.login-headerbox a{
+    display: block;
+    /* width: 50px; */
+    height: 100%;
+    float: left;
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+} 
+.login-headerbox span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: #464646;
+    text-align: center;
+    line-height: 30px;
+    color:#fff;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    margin: -15px 0 0 86px;
+}
+.login-headerbox a:nth-child(2){
+    margin: 0 6px;
+}
+.login-headerbox:hover span{
+    background: #b7b7b7;
+}
+.login:hover{
+    text-decoration: underline;
+}
+.registration:hover{
+    text-decoration: underline;
+}
+
+/* 箭头 */
+.arrow{
+    position: absolute;
+    right: 167px;
+    /* right: 443px; */
+    top: 0;
+    border-top:12px solid  rgba(000,000,000,1); 
+    border-left:12px solid  rgba(000,000,000,0);
+    border-bottom:12px solid  rgba(000,000,000,0);
+    border-right:12px solid  rgba(000,000,000,0);
+    /* display: none; */
+}
+/* 搜索栏样式 */
+.search{
+    width: 100%;
+    height: 80px;
+    position: relative;
+    display: none;
+    background: #fff;
+    /* display: block; */
+}
+.search-content{
+    width: 1000px;
+    height: 80px;
+    margin: 0 auto;
+    line-height: 85px;
+    position: relative;
+}
+.search-value{
+    position: relative;
+}
+.search-content input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 24px;
+    color: #999;
+}
+.search-button ,.search-close{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background: #464646;
+    line-height: 30px;
+    color:#fff;
+    font-size: 18px;
+    position: absolute;
+    right: 55px;
+    top: 50%;
+    margin-top: -15px;
+}
+.search-button span{
+    display: block;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left:-12px; 
+    font-size: 24px;
+} 
+.search-close{
+    text-align: center;
+    right: 0;
+    cursor:pointer;
+}
+
+/* 搜索下拉菜单 */
+.search-result{
+    width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 1000;
+}
+.search-result p{
+    width: 100%;
+    line-height: 50px;
+    /* height: 40px; */
+    font-size: 24px;
+    color: #999;
+}
+
+/* 登录注册下拉页面总的样式 */
+.header-expanded{
+    width: 100%;
+    height: 397px;
+    display: none;
+    position: relative;
+    background: #fff;
+    /* display: block; */
+}
+
+/* 登录页面样式 */
+.header-expanded .loginbox,.header-expanded>form{
+    width: 1000px;
+    height: 317px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -158px;
+    margin-left:-500px;
+}
+.header-expanded .arrow{
+    right: 443px;
+}
+/* 登录页面样式 */
+.loginbox{
+    /* display: block; */
+    display: none;
+    /* background: #940000; */
+    background: white;
+    /* z-index: 1; */
+    display: flex;
+    justify-content: space-between;
+}
+.loginbox>div{
+    /* width: 30%; */
+    font-size: 24px;
+    color: #545454;
+}
+.loginbox_left{
+    /* background: yelllow; */
+    /* padding-right:50px ; */
+    width: 25%;
+}
+.loginAccount{
+    width: 78%;
+    height: 40px;
+    background: #000000;
+    margin-top: 20px;
+    color: #f9f9f9;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    cursor:pointer;
+    box-sizing: border-box;
+    border: none;
+}
+.loginAccount:hover{
+    line-height: 38px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #000000;
+    border:2px solid #999999;
+}
+.loginbox_center{
+    border-left: 1px solid #b4b4b4;
+    padding-left: 50px;
+    width: 40%;
+}
+.loginbox_center h5{
+    font-size: 24px;
+    font-weight: normal;
+}
+.externalLogin{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.externalLogin li{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+.externalLogin li img{
+    width: 100%;
+    height: 100%;
+}
+.loginbox_right{
+    border-left: 1px solid #b4b4b4;
+    padding-left: 50px;
+    width: 35%;
+}
+.loginbox_right span{
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    /* display: block; */
+    display:none;
+}
+.loginbox_right .loginAccount{
+    width: 100%;
+    margin-top:10px; 
+}
+.loginbox_right input{
+    width: 100%;
+    height: 35px;
+    margin-top:20px ;
+    padding-left:10px ;
+    box-sizing: border-box;
+}
+.loginbox_right ul li:nth-child(4) div{
+    margin-top:20px; 
+}
+.loginbox_right ul li:nth-child(5){
+    margin-top: 30px;
+    font-size: 12px;
+}
+.loginbox_right ul li:nth-child(6){
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.remember{
+    display: flex;
+    justify-content: space-between;
+    margin-top:10px ;
+}
+.loginbox_right ul li:nth-child(6) div input{
+    width: 16px;
+    height: 16px;
+    margin-top:3px ;
+}
+.loginbox_right ul li:nth-child(6) a{
+    margin-top:10px ;
+    color: #545454;
+}
+
+/* 注册页面样式 */
+.registerbox{
+    /* display: none; */
+    display: block;
+    position: relative;
+    background: white;
+}
+.registerbox ul{
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+}
+.registerbox ul li{
+    width: 30%;
+    height: 95px;
+    margin: 0 5% 1% 0;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+/* 性别 */
+.account,.sex{
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+.registerbox ul li b{
+    color: red;
+}
+.registerbox input{
+    border: 1px solid #999;
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    padding: 5px 5px 5px 18px;
+    box-sizing: border-box;
+}
+.registerbox ul li:nth-child(3){
+    margin-right: 0;
+}
+.sex{
+    display: flex;
+    line-height: 40px;
+}
+.sex div{
+    width: 50%;
+    display: flex;
+}
+.sex input{
+    width: 20px;
+    height: 20px;
+    margin: 10px 10px 0 0;
+}
+.registerbox_bottom ul li:nth-child(3){
+    font-size: 11px;
+}
+.registerbox_middle select{
+    width: 30%;
+    height: 40px;
+}
+.registerbox_middle select:nth-child(2){
+    margin: 0 20px 0 20px;
+}
+.birthday{
+    display: flex;
+    margin-top: 10px;
+}
+.blueDot{
+    width: 12px;
+    height: 12px;
+    background: #3873ff;
+    border-radius: 12px;
+    margin: 14px 20px;
+}
+.validation{
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    background: #f4f4f4;
+    cursor:pointer;
+    color: #666;
+    line-height: 42px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    display: flex;
+    box-sizing: border-box;
+}
+.shortMessage{
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    margin-top:10px;
+}
+.shortMessage input{
+    width: 50%;
+}
+.shortMessage h5{
+    /* display: inline-block; */
+    width: 45%;
+    height: 40px;
+    background: #848484;
+    color: #f2f2f2;
+    text-align: center;
+    font-size: 13px;
+    font-weight: normal;
+    cursor:pointer;
+}
+.registeredAccount{
+    width: 100%;
+    height: 40px;
+    background: #000000;
+    margin-top: 10px;
+    color: #f9f9f9;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    cursor:pointer;
+    box-sizing: border-box;
+    border: none;
+}
+.registeredAccount:hover{
+    line-height: 38px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #000000;
+    border:2px solid #999999;
+}
+.phone_inputError,.mail_inputError,.pas_inputError,.confirmPas_inputError,.shortMes_inputError{
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    /* display: block; */
+    display:none;
+}
+.phone_blankError,.mail_blankError,.pas_blankError,.confirmPas_blankError{
+    /* display: block; */
+    display:none;
+    color: red;
+    font-size: 12px;
+}
+
+
+
+
+/* 导航 */
+.navigation{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background: #464646;
+    position: relative;
+}
+.list{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #ffffff;
+}
+.list a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.list a:hover{
+    text-decoration: underline;
+}
+.list li{
+    width: 134px;
+    margin-top:3px ;
+}
+.list span{
+    /* position: absolute;
+    right: 167px;
+    top: 0; */
+    width: 0;
+    height: 0;
+    border-top:8px solid  rgba(255,255,255,1); 
+    border-left:8px solid  rgba(000,000,000,0);
+    border-bottom:8px solid  rgba(000,000,000,0);
+    border-right:8px solid  rgba(000,000,000,0);
+    display: block;
+    margin: 5px auto 0;
+}
+/* 二级导航 */
+.man_nav,.woman_nav,.child_nav{
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 268px;
+    /* display: block; */
+    display: none;
+    /* background: red; */
+    /* z-index: 10; */
+}
+/* 二级导航ul */
+.dressing{
+    display: flex;
+    padding-left:180px ;
+}
+.dressing li a{
+    display: block;
+    color: #000000;
+    position: relative;
+    width: 130px;
+    height: 130px;
+    /* background: yellow; */
+}
+.dressing img{
+    display: block;
+}
+.dressing li a:hover i{
+    text-decoration: underline;
+}
+.dressing i{
+    display: block;
+    font-style: normal;
+    font-size: 14px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    margin-left:-14px ;
+}
+.man_nav,.woman_nav ul:nth-child(3) i{
+    font-size: 12px;
+}
+.man_nav,.woman_nav ul:nth-child(3) li:nth-child(1) i{
+    font-size: 14px;
+}
+.child_nav i{
+    margin-left:-28px ;
+}
+.child_nav .dressing{
+    padding-left:250px ;
+}
+
+
+
+
+/* 活动页 */
+section img{
+    width: 100%;
+    display: block;
+}
+section li{
+    position: relative;
+}
+
+/* 小窗口 */
+.small-box{
+    width: 270px;
+    height: 220px;
+    border-top: 3px solid #f3f1f2;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #000;
+    border-left: 3px solid #f3f1f2;
+    position: absolute;
+    top: 260px;
+    left: 415px;
+    cursor: pointer;
+}
+section ul li:nth-child(3) .small-box{
+    top: 505px;
+    left: 795px;
+}
+section ul li:nth-child(4) .small-box{
+    top: 145px;
+    left: 290px;
+}
+section ul li:nth-child(4) .small-box .buy{
+    margin-left: -40px;
+}
+section ul li:nth-child(5) .small-box{
+    top: 40px;
+    left: 675px;
+}
+section ul li:nth-child(5) .small-box .buy{
+    top: 140px;
+    margin-left: 100px;
+}
+section ul li:nth-child(6) .small-box{
+    top: 500px;
+    left: 220px;
+}
+section ul li:nth-child(6) .small-box .buy{
+    margin-left: -35px;
+}
+section ul li:nth-child(7) .small-box{
+    top: 455px;
+    left: 690px;
+}
+section ul li:nth-child(8) .small-box{
+    top: 260px;
+    left: 360px;
+}
+section ul li:nth-child(8) .small-box .buy{
+    top: 190px;
+    margin-left: 75px;
+}
+
+
+
+
+/* 小窗口关闭按钮 */
+.heard-top{
+    width: 268px;
+    height: 30px;
+    border-top: 1px solid #c5c2bd;
+    border-right: 1px solid #c5c2bd;
+    border-left: 1px solid #c5c2bd;
+    display: flex;
+    justify-content: space-between;
+    background: red;
+}
+.heard-top h4{
+    color: #fff;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 28px;
+    text-indent: 8px;
+}
+.close{
+    display: flex;
+    justify-content: right;
+}
+.close span{
+    display: block;
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    border-top: 1px solid #fdbec9;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #5e0203;
+    border-left: 1px solid #ffffff;
+    background: #c1c1c1;
+    margin:6px 8px 0 0 ;
+    text-align: center;
+}
+.close span:nth-child(1){
+    line-height: 3px;
+}
+
+
+/* 小窗口里信息 */
+.bottom-box{
+    width: 266px;
+    height: 185px;
+    border: 2px solid #c5c2bd;
+}
+.header-bottom{
+    width: 266px;
+    height: 185px;
+    border-top: 1px solid #f3f1f2;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #f3f1f2;
+    text-align: center;
+    background: #c1c1c1;
+    padding-top:10px ;
+    box-sizing: border-box;
+}
+.header-bottom img{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    margin-left:-65px ;
+}
+/* 立即购买 */
+.buy{
+    width: 110px;
+    height: 50px;
+    line-height: 50px;
+    background: #fefcc3;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #000;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    margin-left:-55px ;
+}
+
+
+
+/* 聊天悬浮窗 */
+#floating{
+    width: 88px;
+    height: 88px;
+    position: absolute;
+    right: 0;
+    z-index: 20;
+    /* top: 100px; */
+    /* background: red; */
+}
+
+
+/* 底部 */
+/* 购物指南 */
+.sitemap{
+    width: 1000px;
+    margin: 80px auto 0;
+    text-align: center;
+    padding-top:30px ;
+    border-top:1px solid #ccc; 
+}
+.sitemap a:hover{
+    color: #ccc;
+}
+.sitemap dt a{
+    font-size: 16px;
+    font-weight: bold;
+}
+.sitemap dl a{
+    text-decoration: none;
+    line-height: 20px;
+    color: #333;
+}
+.sitemap dl{
+    width: 24%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 280px;
+}
+.sitemap dl dt{
+    margin-bottom: 20px;
+}
+.sitemap dl dd{
+    font-size: 14px;
+}
+.mgb20{
+    margin-bottom: 20px;
+}
+
+/* 底部 */
+.footer-box{
+    width: 100%;
+    background: #000;
+    color: #fff;
+}
+.footer-last{
+    height: 140px;
+    margin: 0 auto;
+    width: 1000px;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom:5px ;
+}
+.footer-last a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-list{
+    line-height: 30px;
+    padding: 15px 0;
+    width: auto;
+    list-style: none;
+    /* display: flex; */
+}
+.footer-list i{
+        font-style: normal;
+        display: inline-block;
+        margin: 0 10px;
+}
+.primary-logo{
+    margin: 0 auto;
+    width: 60px;
+    height: 40px;
+    background: url(../img/logo02.jpg) no-repeat;
+    background-size: 60px 40px;
+}
+.footer-bottom{
+    margin-top:5px ;
+    display: block;
+    text-align: center;
+    width: 100%;
+}

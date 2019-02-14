@@ -129,13 +129,13 @@ $(".ornaments").on("mouseenter",function(){
 // 首页商品列表加载
 
 $.ajax({
-    url : "./index.json",
+    url : "./json/index.json",
     type : "GET",
-    dataType : "json",
+    dataType : "json"
 })
 .then(render)
 function render(res){
-    // console.log(res)
+    console.log(res)
     var html = "";
     $.each(res,function(index,item){
                 console.log(item);

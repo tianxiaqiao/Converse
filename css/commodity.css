@@ -195,8 +195,8 @@ section{
 }
 .commodity-box img{
     /* width: 66%; */
-    width: 10%;
-    height: 10%;
+    width: 165px;
+    height: 165px;
 }
 .commodity-box dd:nth-child(2){
     margin:10px 0 50px 0 ;

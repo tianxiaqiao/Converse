@@ -29,8 +29,6 @@ $("#sizebox").prev("p").on("click",function(){
     }
 });  
 
-
-
 // 点击过滤事件
 $(".filter").on("click",function(){
     $(this).siblings("li").removeClass("active");
@@ -38,89 +36,50 @@ $(".filter").on("click",function(){
 })
 
 
-var container = document.querySelector(".commodity-list")
-var page = 0;
-var heightArray = [];
-function loadMsg(){
-    return jsonp("http://www.wookmark.com/api/json/popular?page=" + page ,"callback");
-}
 
-loadMsg()
-.then(function(res){
-    render(res);
-})
-
-
-//页面渲染
-function render(res){
-    var html = "";
-    res.forEach((item)=>{
-        if(Math.round(item.width,item.height) === 0){
-            return false;
-        }
-        // html += `<div class="box" style="height:${Math.round(224 / item.width * item.height)}px">
-        //             <img src="${item.image}" alt="">
-        //         </div>`;
-        html += `<dl class="commodity-box">
-                    <dt><a href="###"><img src="${item.image}"></a></dt>
-                    <dd><a href="###">【男女同款】Chuck Taylor All Star</a></dd>
-                    <dd>¥599.00</dd>
-                </dl>`;
-
-
-
+// 渲染页面
+function load(){
+    $.ajax({
+        url : "../json/list.json",
+        type : "GET",
+        dataType : "json"
     })
-    container.innerHTML += html;
+    .then(render)
+    function render(res){
+        // console.log(res);
+        var html = "";
+        $.each(res,function(index,item){
+            html += `<dl class="commodity-box">
+                        <dt><a href="###"><img src="${item.image}"></a></dt>
+                        <dd><a href="###">${item.title}</a></dd>
+                        <dd>${item.price}</dd>
+                    </dl>`;
+        })
+        $(".commodity-list").append(html);
+    }
 }
+load()
 
-//无限滚动
+
+
+// 瀑布流
+//无限滚动瀑布流
+var container = document.querySelector(".commodity-list")
 window.addEventListener("scroll",handerScroll);
 
 //可视区高度
 var ch = document.documentElement.clientHeight;
 // console.log(ch);
-var loading = false;
 function handerScroll(){
     //滚上去的高度
     var st = document.body.scrollTop || document.documentElement.scrollTop;
-
+// console.log(st)
     //文档高度
     var dh = container.offsetHeight;
-    if((dh-ch)-st <1000 && loading == false){
-        page ++;
-        loading = true;
-        loadMsg()
-        .then(function(res){
-            render(res);
-            // sort()
-            loading = false;
-            // console.log(1);
-        })
+    // console.log(dh)
+    if((dh-ch)-st <1000){
+        // loading = true;
+        load()
     }
     // console.log(dh,ch,st)
-}
-
-//jsonp封装
-function jsonp(url,jsonp_key){
-    return new Promise(function(resolve,reject){
-        var randomName = "_" + Date.now();
-        // console.log(randomName);
-        window[randomName] = function(res){
-            // console.log(res);
-            resolve(res);
-        }
-        var script = document.createElement("script");
-
-        url = url + (/\?/.test(url) ? "&" : "?") + jsonp_key + "=" + randomName;
-
-        script.src = url;
-
-        document.body.appendChild(script);
-
-        script.onload = function(){
-            this.remove();
-            window[randomName] = null;
-            delete window[randomName];
-        }  
-    })
 }
