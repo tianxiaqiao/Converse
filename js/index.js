@@ -69,10 +69,10 @@ banner_timer = null;
 if(banner_timer !== null ) return false;
 
 // 自动点击
-// banner_timer = setInterval(function(){
-//     var evt = new Event("click");
-//     right.dispatchEvent(evt);
-// },3000)
+banner_timer = setInterval(function(){
+    var evt = new Event("click");
+    right.dispatchEvent(evt);
+},3000)
 }
 }
 sS("start");
@@ -135,31 +135,31 @@ $.ajax({
 })
 .then(render)
 function render(res){
-    console.log(res)
+    // console.log(res)
     var html = "";
     $.each(res,function(index,item){
-                console.log(item);
+                // console.log(item);
                 // console.log(index);
                 html += 
                 `<div class="new-list">
                     <dl class="list-head">
-                        <dt><a href="###"><img src="${item.image}" alt=""></a></dt>
-                        <dd><a href="###">${item.title}</a></dd>
+                        <dt><a href="./html/commodity.html"><img src="${item.image}" alt=""></a></dt>
+                        <dd><a href="./html/commodity.html">${item.title}</a></dd>
                         <dd>${item.price}</dd>
                     </dl>
                     <dl class="list-head">
-                        <dt><a href="###"><img src="${item.image}" alt=""></a></dt>
-                        <dd><a href="###">${item.title}</a></dd>
+                        <dt><a href="./html/commodity.html"><img src="${item.image}" alt=""></a></dt>
+                        <dd><a href="./html/commodity.html">${item.title}</a></dd>
                         <dd>${item.price}</dd>
                     </dl>
                     <dl class="list-head">
-                        <dt><a href="###"><img src="${item.image}" alt=""></a></dt>
-                        <dd><a href="###">${item.title}</a></dd>
+                        <dt><a href="./html/commodity.html"><img src="${item.image}" alt=""></a></dt>
+                        <dd><a href="./html/commodity.html">${item.title}</a></dd>
                         <dd>${item.price}</dd>
                     </dl>
                     <dl class="list-head">
-                        <dt><a href="###"><img src="${item.image}" alt=""></a></dt>
-                        <dd><a href="###">${item.title}</a></dd>
+                        <dt><a href="./html/commodity.html"><img src="${item.image}" alt=""></a></dt>
+                        <dd><a href="./html/commodity.html">${item.title}</a></dd>
                         <dd>${item.price}</dd>
                     </dl>
                 </div>`

@@ -8,13 +8,13 @@
         die("数据库连接失败" . mysql_error());
     };
 
-    $phone = $_GET["phone"];
-    $password = $_GET["password"];
-    $email = $_GET["email"];
-    $sex = $_GET["sex"];
-    $years = $_GET["years"];
-    $months = $_GET["months"];
-    $days = $_GET["days"];
+    $phone = $_POST["phone"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $sex = $_POST["sex"];
+    $years = $_POST["years"];
+    $months = $_POST["months"];
+    $days = $_POST["days"];
     // echo"$phone;$password"
 
     mysql_select_db("new_mysql",$con);

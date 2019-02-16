@@ -10,6 +10,7 @@ li{
 }
 a{
     text-decoration: none;
+    color: #000;
 }
 
 header{
@@ -204,6 +205,7 @@ li{
     right: 55px;
     top: 50%;
     margin-top: -15px;
+    cursor: pointer;
 }
 .search-button span{
     display: block;
@@ -249,7 +251,7 @@ li{
 }
 
 /* 登录页面样式 */
-.header-expanded .loginbox,.header-expanded>form{
+.header-expanded .loginbox,.header-expanded>div:nth-child(3){
     width: 1000px;
     height: 317px;
     position: absolute;

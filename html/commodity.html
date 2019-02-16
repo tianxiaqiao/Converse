@@ -14,21 +14,21 @@
         <div class="header-content">
             <!-- 首行logo -->
             <div class="logo">
-                <a href="#">
+                <a href="###">
                     <img src="../img/logo.jpg" alt="">
                 </a>  
             </div>
 
             <!-- 首行右侧帮助 -->
             <div class="right-headerbox">
-                <a href="#">
+                <a href="###">
                     <span>?</span>
                 </a>
             </div>
 
             <!-- 首行右侧搜索 -->
             <div class="right-headerbox">
-                <a href="#" class="magnifier">
+                <a href="###" class="magnifier">
                     <span  class="iconfont">&#xe62a;</span>
                 </a>
             </div>
@@ -42,15 +42,15 @@
 
             <!-- 首行购物车 -->
             <div class="left-headerbox">
-                <a href="#">购物车</a>
+                <a href="###">购物车</a>
                 <span>0</span>
             </div>
 
             <!-- 首行登录注册 -->
             <div class="login-headerbox">
-                    <a href="#" class="login">登录</a>
-                    <a href="#">/</a>
-                    <a href="#" class="registration">注册</a>
+                    <a href="###" class="login">登录</a>
+                    <a href="###">/</a>
+                    <a href="###" class="registration">注册</a>
                     <span id="login" class="iconfont">&#xe63c;</span>
             </div>
         </div>  
@@ -124,6 +124,7 @@
                                 <p class="blueDot"></p>
                                 <p>点击按钮进行验证</p>
                             </div>
+                            <span class="error">请输入正确账号或密码</span>
                         </li>
                         <li>
                             一旦登录，即表明你同意匡威的<a href="#">法律声明</a>和<a href="#">使用规则</a>
@@ -135,14 +136,14 @@
                             <div class="remember">
                                 <input type="checkbox" class="remember_pas">记住登录名
                             </div>
-                            <a href="#">忘记密码？</a>
+                            <a href="###">忘记密码？</a>
                         </li>
                     </ul>
                 </div>
             </div> 
 
             <!-- 注册页面 -->
-            <form class="registerbox" action="./mysql.php" method="GET">
+            <div class="registerbox">
                 <div class="registerbox_top">
                     <ul>
                         <li>
@@ -168,10 +169,10 @@
                             <b>*</b>
                             <div class="sex">
                                 <div class="man">
-                                    <input name="sex" type="radio" checked="checked"/>男的
+                                    <input name="sex" type="radio" checked="checked"/><span>男的</span>
                                 </div>
                                 <div class="woman">
-                                    <input name="sex" type="radio" />女的
+                                    <input name="sex" type="radio" /><span>女的</span> 
                                 </div>
                             </div>
                         </li>
@@ -240,13 +241,13 @@
                         </li>
                     </ul>                    
                 </div>
-            </form> 
+            </div> 
         </div>
         <!-- 导航 -->
         <div class="navigation">
             <ul class="list">
                 <li  id="man_nav">
-                    <a href="#">男的</a>
+                    <a href="###">男的</a>
                     <span></span>
                     <!-- 二级导航01 -->
                     <div class="man_nav">
@@ -336,7 +337,7 @@
                     </div>
                 </li>
                 <li id="woman_nav">
-                    <a href="#">女的</a>
+                    <a href="###">女的</a>
                     <span></span>
                     <!-- 二级导航02 -->
                     <div class="woman_nav">
@@ -426,7 +427,7 @@
                     </div>  
                 </li>
                 <li id="child_nav">
-                    <a href="#">儿童</a>
+                    <a href="###">儿童</a>
                     <span></span> 
                         <!-- 二级导航03 -->
                     <div class="child_nav">
@@ -459,15 +460,15 @@
                     </div>   
                 </li>
                 <li>
-                    <a href="#">型人搭配</a>
+                    <a href="###">型人搭配</a>
                     <span></span>
                 </li>
                 <li>
-                    <a href="#">联名合作款</a>
+                    <a href="###">联名合作款</a>
                     <span></span>
                 </li>
                 <li>
-                    <a href="#">店铺分布</a>
+                    <a href="###">店铺分布</a>
                     <span></span>
                 </li>
             </ul>
@@ -816,8 +817,10 @@
         </div>
     </footer>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="../js/jquery-cookie.js"></script>
     <script src="../js/commodity.js"></script>
     <script src="../js/headerAndFooter.js"></script>
+    <script src="../js/pagingDedicated.js"></script>
 
 </body>
 </html>

@@ -54,11 +54,18 @@ $(".import").on("input",function(){
     },500);
 })
 
-// 点击搜索事件
-$(".search-button").on("click",function(){
-    
-})
-
+// // 点击搜索事件
+// $(".import").on("input",function(){
+//     console.log($(".import").val());
+//     $(".search-button").on("click",function(){ 
+//         console.log($(".import").val())
+//         if($(".import").val() != ""){
+//             $(location).attr("href", "./html/commodity.html");
+//         }else{
+//             return false;
+//         }
+//     })
+// })
 
 
 // 点击登录头像事件
@@ -122,23 +129,8 @@ $("#loginPas").on("blur",function(){
                 $("#loginPas").css("border","1px solid #b5b5b5");
             }
 })
-// 点击登录
-var spans = $(".loginbox_right span");
-$(".loginAccount").on("click",function(evt){
-    var e= evt || window.event;
-    // spans = Array.from(spans);
-    var inputs = $(".loginbox_right input").val();
-    // console.log(inputs);
-    var display =$(spans).css('display');
-    if(display == "none" && inputs != ""){
-        alert("登陆成功")
-    }else{
-        return false;
-    }
-})
 
-
-// 点击注册发生的事件
+// 点击注册汉字发生的事件
 $(".registration").on("click",function(){
     $(".loginbox"). fadeOut("show");
     $(".header-expanded").show("show");
@@ -221,6 +213,7 @@ $("#confirmPassword").on("blur",function(){
                 $(".confirmPas_inputError").css("display","block");
             }
 })
+
 // 5.生日
 $("document").ready(function(){
     var date = new Date();
@@ -296,20 +289,133 @@ $(".sendText").on("click",function(){
     // console.log(code);
     $("#inCode").val(code);
 })
-// 7.注册提交事件
-var spans = $(".registerbox span");
-$(".registeredAccount").on("click",function(evt){
-    var e= evt || window.event;
-    // spans = Array.from(spans);
-    var inputs = $(".registerbox input").val();
-    // console.log(inputs);
-    var display =$(spans).css('display');
-    if(display == "none" && inputs != ""){
-        // $(".loginbox"). fadeIn("show");
-    }else{
-        return false;
-    }
-})
+
+
+// 8获取性别
+// var sex=null;
+// // console.log($(".sex div"));
+// $(".sex div").on("click",function sex(e){
+//     var target = e.currentTarget;
+//     // console.log($(target).index());
+//     var index = $(target).index();
+//     // console.log($(".sex div")[index].childNodes[2].innerHTML);
+//    sex = $(".sex div")[index].childNodes[2].innerHTML;
+    
+// })
+ 
+// // 7.注册提交事件
+// $(".registeredAccount").on("click",function(){
+//     var phone = $("#phone").val();
+//     var password = $("#password").val();
+//     var email = $("#email").val();   
+//     var sex = $(".sex div input").val();
+//     var years = $("#years").val();
+//     var months = $("#months").val();
+//     var days = $("#days").val();
+//     var inCode = $("#inCode").val();
+//     var phone_inputError = $(".phone_inputError").css("display");
+//     var phone_blankError = $(".phone_blankError").css("display");
+//     var mail_inputError = $(".mail_inputError").css("display");
+//     var mail_blankError = $(".mail_blankError").css("display");
+//     var pas_inputError = $(".pas_inputError").css("display");
+//     var pas_blankError = $(".pas_blankError").css("display");
+//     var confirmPas_inputError = $(".confirmPas_inputError").css("display");
+//     var confirmPas_blankError = $(".confirmPas_blankError").css("display");
+//     var shortMes_inputError = $(".shortMes_inputError").css("display");
+
+//     // console.log(shortMes_inputError);
+//     // console.log(phone_blankError);
+//     // console.log(phone_inputError);
+//     // console.log(mail_inputError);
+//     // console.log(mail_blankError);
+//     // console.log(pas_inputError );
+//     // console.log(pas_blankError );
+//     // console.log(confirmPas_inputError);
+//     // console.log(confirmPas_blankError);
+//     // console.log(sex);
+//     // console.log(phone);
+//     // console.log(years);
+
+//     if(phone != "" && password != "" && email != "" &&inCode != "" && phone_inputError === "none" && phone_blankError === "none" && mail_inputError === "none" && mail_blankError === "none" && pas_inputError === "none" && pas_blankError === "none" && confirmPas_inputError === "none" && confirmPas_blankError === "none" && shortMes_inputError === "none"){
+//         // console.log(1);
+//         $.ajax({
+//             url:"mysql.php",
+//             data:{
+//                 phone : phone,
+//                 password : password,
+//                 email : email,
+//                 sex : sex ,
+//                 years : years,
+//                 months : months,
+//                 days : days
+//             },
+//             type:"POST",
+//             success: function(data){
+//                 // if(data.trim()=="OK")//data.trim 去空格,防止出错
+//                 $.cookie("zhanghu", phone ,{ expires: 7 } );
+
+//                 }
+//             });
+//             $(".registerbox").fadeOut();
+//             $(".loginbox"). fadeIn("show");
+//             $("#loginID").attr("value",phone);
+//     }else{
+//         return false;
+//     }
+// })
+
+
+
+// // 点击登录
+// $(".loginAccount").on("click",function(){
+//     // console.log($.cookie("zhanghu"));
+//     var loginID = $("#loginID").val();
+//     var loginPas = $("#loginPas").val();
+//     // var email = $("#email").val();   
+ 
+//     // console.log(loginID);
+//     var accountError = $(".accountError").css("display");
+//     var pasError = $(".pasError").css("display");
+  
+
+
+//     // console.log(accountError);
+//     // console.log(pasError);
+  
+
+//     if(loginID != "" && loginPas != "" && accountError === "none" && pasError === "none" ){
+//         // console.log(1);
+//         $.ajax({
+//             url:"login.php",
+//             data:{
+//                 loginID : loginID,
+//                 loginPas : loginPas,
+//                 // email : email,
+//             },
+//             type:"POST",
+//             success: function(data){
+//                 // console.log(data);
+//                 var obj = eval("("+data+")");
+//                 // console.log(obj);
+//                 if(obj.state == "success"){
+//                     alert("登陆成功");
+//                 }else if(obj.state == "error"){
+//                         $(".error").css("display","block");
+//                     }
+//                 }
+//             });
+
+//     }else{
+//         return false;
+//     }
+    
+// })
+
+// $(document).on("click",function(){
+//     $(".error").css("display","none");
+// })
+
+
 
 // 二级菜单
 secondNav("#woman_nav",".woman_nav");
